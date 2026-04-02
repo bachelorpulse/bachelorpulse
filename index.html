@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BachelorPulse â€“ Practice ki Raftaar, Revision ki Shakti.</title>
+  <title>BachelorPulse – Class 6 to 10</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@400;600&display=swap" rel="stylesheet" />
   <style>
@@ -26,7 +26,7 @@
       pointer-events:none;z-index:0}
     .app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 16px 40px}
 
-    /* â”€â”€ Sticky Navbar â”€â”€ */
+    /* ── Sticky Navbar ── */
     .site-header{
       position:sticky;top:0;z-index:800;
       width:calc(100% + 32px);margin-left:-16px;margin-right:-16px;
@@ -118,34 +118,6 @@
     .learn-card[data-learn="mindmap"] .learn-name{color:#f472b6}
     .learn-desc{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.5}
 
-    /* PRACTICE ALL SUBJECT BANNER */
-    .practice-all-banner{
-      width:100%;border-radius:var(--radius);margin-bottom:22px;
-      background:linear-gradient(135deg,rgba(245,158,11,.13),rgba(59,130,246,.10));
-      border:1.5px solid rgba(245,158,11,.45);
-      padding:18px 22px;display:flex;align-items:center;gap:16px;
-      cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;
-      position:relative;overflow:hidden;
-    }
-    .practice-all-banner::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:3px;
-      background:linear-gradient(90deg,#f59e0b,#3b82f6);
-      border-radius:var(--radius) var(--radius) 0 0;
-    }
-    .practice-all-banner:hover{
-      transform:translateY(-5px);border-color:var(--accent);
-      box-shadow:0 16px 40px rgba(0,0,0,.4),0 0 0 1px var(--accent);
-    }
-    .pab-icon{font-size:2.4rem;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(245,158,11,.5));transition:transform .2s}
-    .practice-all-banner:hover .pab-icon{transform:scale(1.15) rotate(-5deg)}
-    .pab-text{flex:1}
-    .pab-title{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:800;
-      background:linear-gradient(135deg,#f59e0b,#fbbf24,#3b82f6);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .pab-sub{font-size:.78rem;color:var(--muted);margin-top:3px;line-height:1.4}
-    .pab-arrow{font-size:1.4rem;color:var(--accent);flex-shrink:0;transition:transform .2s}
-    .practice-all-banner:hover .pab-arrow{transform:translateX(4px)}
-
     /* COUNT GRID */
     .count-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
     .count-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:26px 16px 22px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
@@ -228,73 +200,6 @@
     .sol-box.open{display:block}
     .sol-label{font-size:.72rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
     .sol-text{font-size:.88rem;color:#cdd8ea;line-height:1.65}
-    /* â•â• POLL MODE â€” one question at a time â•â• */
-    .poll-shell{display:flex;flex-direction:column;gap:0;min-height:80vh}
-
-    /* â”€â”€ top bar â”€â”€ */
-    .poll-topbar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-    .poll-topbar-left{display:flex;flex-direction:column;gap:4px;flex:1}
-    .poll-topbar-label{font-family:'Baloo 2',cursive;font-size:.88rem;font-weight:700;color:var(--accent)}
-    .poll-progress{height:6px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden;max-width:260px}
-    .poll-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:999px;transition:width .4s ease}
-    .poll-score-live{display:flex;gap:8px;align-items:center;flex-shrink:0}
-    .poll-sc{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px}
-    .poll-sc-c{background:rgba(16,185,129,.15);color:var(--green);border:1px solid rgba(16,185,129,.3)}
-    .poll-sc-w{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
-
-    /* â”€â”€ single question card â”€â”€ */
-    .poll-qcard{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 18px 16px;margin-bottom:14px;animation:fadeUp .3s ease both;transition:border-color .35s}
-    .poll-qcard.answered-correct{border-color:rgba(16,185,129,.55)}
-    .poll-qcard.answered-wrong  {border-color:rgba(239,68,68,.45)}
-    .poll-q-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-    .poll-q-num{font-size:.75rem;font-weight:700;color:var(--accent2);background:rgba(59,130,246,.12);padding:2px 10px;border-radius:999px}
-    .poll-bm-btn{background:transparent;border:1px solid var(--border);border-radius:999px;padding:3px 10px;font-size:.73rem;color:var(--muted);cursor:pointer;transition:all .18s;font-family:'Hind',sans-serif}
-    .poll-bm-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .poll-bm-btn.saved{border-color:var(--accent);color:#fbbf24;background:rgba(245,158,11,.12)}
-    .poll-q-text{font-size:1.02rem;font-weight:600;color:var(--text);line-height:1.55;margin-bottom:14px}
-
-    /* â”€â”€ options â”€â”€ */
-    .poll-options{display:grid;gap:9px}
-    .poll-opt{position:relative;display:flex;align-items:stretch;border-radius:12px;border:1.5px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .2s;background:transparent;min-height:48px}
-    .poll-opt:hover:not(.locked){border-color:var(--accent2);background:rgba(59,130,246,.05)}
-    .poll-opt.locked{cursor:default}
-    .poll-opt-bar{position:absolute;left:0;top:0;bottom:0;border-radius:10px;transition:width .55s cubic-bezier(.4,0,.2,1);width:0%;z-index:0}
-    .poll-opt.opt-correct .poll-opt-bar{background:rgba(16,185,129,.2)}
-    .poll-opt.opt-wrong   .poll-opt-bar{background:rgba(239,68,68,.16)}
-    .poll-opt.opt-neutral .poll-opt-bar{background:rgba(255,255,255,.04)}
-    .poll-opt-lbl{position:relative;z-index:1;width:34px;min-width:34px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;color:var(--muted);border-right:1px solid var(--border);background:rgba(255,255,255,.03);transition:all .2s;align-self:stretch}
-    .poll-opt.opt-correct .poll-opt-lbl{color:var(--green)}
-    .poll-opt.opt-wrong   .poll-opt-lbl{color:var(--red)}
-    .poll-opt.opt-chosen  .poll-opt-lbl{color:#fff;background:var(--accent2)}
-    .poll-opt-content{position:relative;z-index:1;flex:1;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-    .poll-opt-txt{font-size:.91rem;color:var(--text);line-height:1.4}
-    .poll-opt-icon{font-size:1.1rem;flex-shrink:0;opacity:0;transition:opacity .2s}
-    .poll-opt.opt-correct .poll-opt-icon,.poll-opt.opt-wrong .poll-opt-icon{opacity:1}
-
-    /* â”€â”€ feedback + explanation â”€â”€ */
-    .poll-feedback{margin-top:11px;border-radius:11px;padding:10px 14px;font-size:.86rem;font-weight:600;display:none;animation:fadeUp .22s ease both;line-height:1.4}
-    .poll-feedback.show{display:block}
-    .poll-feedback.fb-correct{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#6ee7b7}
-    .poll-feedback.fb-wrong  {background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
-    .poll-expl-btn{margin-top:10px;background:transparent;border:1px solid rgba(59,130,246,.3);border-radius:999px;padding:5px 14px;font-size:.75rem;font-weight:700;color:#60a5fa;cursor:pointer;transition:all .18s;font-family:'Hind',sans-serif;display:none;align-items:center;gap:5px}
-    .poll-expl-btn.show{display:inline-flex}
-    .poll-expl-btn:hover{background:rgba(59,130,246,.15)}
-    .poll-expl-box{display:none;margin-top:10px;background:#1a2538;border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:12px 16px;animation:fadeUp .25s ease both}
-    .poll-expl-box.open{display:block}
-    .poll-expl-label{font-size:.68rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-    .poll-expl-text{font-size:.87rem;color:#cdd8ea;line-height:1.65}
-
-    /* â”€â”€ nav row â”€â”€ */
-    .poll-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:2px}
-    .poll-nav-left{display:flex;gap:8px}
-    .poll-skip-btn{background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:999px;padding:9px 18px;font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer;font-family:'Hind',sans-serif;transition:all .18s}
-    .poll-skip-btn:hover{border-color:var(--muted);color:var(--text)}
-    .poll-next-btn{background:linear-gradient(90deg,var(--accent2),#6366f1);color:#fff;border:none;border-radius:999px;padding:10px 26px;font-size:.9rem;font-weight:800;cursor:pointer;font-family:'Hind',sans-serif;box-shadow:0 5px 16px rgba(59,130,246,.35);transition:filter .18s;display:flex;align-items:center;gap:6px}
-    .poll-next-btn:hover{filter:brightness(1.1)}
-    .poll-next-btn:disabled{opacity:.4;cursor:default;box-shadow:none;filter:none}
-    .poll-done-btn{background:linear-gradient(90deg,var(--accent),#d97706);color:#111;border:none;border-radius:999px;padding:10px 24px;font-size:.88rem;font-weight:800;cursor:pointer;font-family:'Hind',sans-serif;box-shadow:0 5px 16px rgba(245,158,11,.35);transition:filter .18s;display:flex;align-items:center;gap:6px}
-    .poll-done-btn:hover{filter:brightness(1.1)}
-
     .empty-quiz{text-align:center;padding:60px 20px;color:var(--muted)}
     .empty-quiz .big{font-size:3rem;margin-bottom:12px}
     .empty-quiz p{font-size:1rem;line-height:1.7}
@@ -325,7 +230,7 @@
     @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-    /* â”€â”€ READING MODE â”€â”€ */
+    /* ── READING MODE ── */
     body.reading-mode .site-header,
     body.reading-mode .breadcrumb,
     body.reading-mode .site-footer,
@@ -343,20 +248,20 @@
     .reading-toggle:hover { border-color: var(--accent); color: var(--accent); }
     body.reading-mode .reading-toggle { background: rgba(245,158,11,.15); border-color: var(--accent); color: var(--accent); }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       MIND MAP CARD â€” thumbnail view
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ══════════════════════════════════════════════
+       MIND MAP CARD — thumbnail view
+    ══════════════════════════════════════════════ */
     .mindmap-wrap {
       position: relative;
       border-radius: 12px;
-      overflow: visible; /* must NOT be hidden â€” scroll container needs to show fully */
+      overflow: visible; /* must NOT be hidden — scroll container needs to show fully */
       background: var(--card);
       border: 1.5px solid var(--border);
       user-select: none;
       line-height: 0;
     }
 
-    /* â”€â”€ MIND MAP SHIMMER SKELETON â”€â”€ */
+    /* ── MIND MAP SHIMMER SKELETON ── */
     .mm-skeleton {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -381,7 +286,7 @@
       100% { background-position: -200% 0; }
     }
 
-    /* â”€â”€ MIND MAP ERROR STATE â”€â”€ */
+    /* ── MIND MAP ERROR STATE ── */
     .mm-img-error {
       display: none;
       flex-direction: column;
@@ -410,16 +315,16 @@
       position: relative;
       z-index: 1;
       -webkit-user-drag: none;
-      /* Crisp text rendering â€” prevents browser smoothing on thumbnail */
+      /* Crisp text rendering — prevents browser smoothing on thumbnail */
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
       -ms-interpolation-mode: nearest-neighbor;
-      /* Only opacity transition â€” no transform/scale which causes blur */
+      /* Only opacity transition — no transform/scale which causes blur */
       transition: opacity 0.2s ease;
     }
     .mindmap-img:hover { opacity: 0.9; }
 
-    /* "Click to Zoom" badge â€” z-index 2, above everything */
+    /* "Click to Zoom" badge — z-index 2, above everything */
     .mindmap-zoom-hint {
       position: absolute;
       bottom: 14px;
@@ -439,17 +344,17 @@
       box-shadow: 0 2px 12px rgba(0,0,0,.6);
     }
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ══════════════════════════════════════════════
        FULL-SCREEN ZOOM MODAL
-       â€” opacity/visibility transition (0.4s fade-in as requested)
-       â€” NO backdrop-filter (causes GPU blur on child image)
-       â€” NO scale/transform on image (causes sub-pixel blur)
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+       — opacity/visibility transition (0.4s fade-in as requested)
+       — NO backdrop-filter (causes GPU blur on child image)
+       — NO scale/transform on image (causes sub-pixel blur)
+    ══════════════════════════════════════════════ */
     .lightbox-overlay {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      /* Pure solid dark â€” absolutely NO backdrop-filter blur */
+      /* Pure solid dark — absolutely NO backdrop-filter blur */
       background: rgba(3, 5, 12, 0.97);
       /* Smooth 0.4s fade-in as requested */
       opacity: 0;
@@ -473,7 +378,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      /* Pinch-zoom on mobile â€” must allow even with user-scalable=no */
+      /* Pinch-zoom on mobile — must allow even with user-scalable=no */
       touch-action: pan-x pan-y pinch-zoom;
       -ms-touch-action: pan-x pan-y pinch-zoom;
     }
@@ -481,11 +386,11 @@
     /* Image wrapper: flex-shrink:0 so image never gets squished */
     .lightbox-img-wrap {
       flex-shrink: 0;
-      /* transform allowed â€” needed for JS zoom buttons */
+      /* transform allowed — needed for JS zoom buttons */
       will-change: transform;
     }
 
-    /* THE MODAL IMAGE â€” natural resolution, crisp rendering */
+    /* THE MODAL IMAGE — natural resolution, crisp rendering */
     .lightbox-img-wrap img {
       display: block;
       width: auto;
@@ -508,7 +413,7 @@
       opacity: 1;
     }
 
-    /* Close button â€” fixed top-right, always visible while scrolling */
+    /* Close button — fixed top-right, always visible while scrolling */
     .lightbox-close {
       position: fixed;
       top: 16px;
@@ -535,7 +440,7 @@
       color: #000;
     }
 
-    /* Chapter title label â€” centered at top */
+    /* Chapter title label — centered at top */
     .lightbox-label {
       position: fixed;
       top: 20px;
@@ -570,7 +475,7 @@
     }
     @media(min-width: 640px) { .lightbox-mobile-hint { display: none; } }
 
-    /* â”€â”€ LIGHTBOX HD SPINNER â”€â”€ */
+    /* ── LIGHTBOX HD SPINNER ── */
     .lightbox-img-spinner {
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; gap: 10px;
@@ -578,7 +483,7 @@
     }
     .lightbox-spin-icon { font-size: 2.2rem; animation: spin 1s linear infinite; display: block; }
 
-    /* â”€â”€ DUAL-ACTION MIND MAP BUTTONS â”€â”€ */
+    /* ── DUAL-ACTION MIND MAP BUTTONS ── */
     .mm-dual-action {
       display: flex; gap: 14px; flex-wrap: wrap;
       padding: 16px 0 4px;
@@ -615,7 +520,7 @@
     .mm-btn-label { font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 800; }
     .mm-btn-sub { font-size: .75rem; opacity: .7; margin-top: 2px; }
 
-    /* â”€â”€ LIGHTBOX ZOOM CONTROLS â”€â”€ */
+    /* ── LIGHTBOX ZOOM CONTROLS ── */
     .lb-zoom-controls {
       position: fixed;
       bottom: 100px;   /* above ad strip */
@@ -650,7 +555,7 @@
       padding: 2px 8px;
     }
 
-    /* â”€â”€ LIGHTBOX ADSENSE STRIP â”€â”€ */
+    /* ── LIGHTBOX ADSENSE STRIP ── */
     .lightbox-adsense-strip {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 10002;
       height: 90px; background: rgba(8, 11, 22, 0.97);
@@ -666,7 +571,7 @@
     /* Push scroll content above the ad strip */
     #lightboxScroll { padding-bottom: 106px; }
 
-    /* â”€â”€ ACTION HUB (Download / Copy) â”€â”€ */
+    /* ── ACTION HUB (Download / Copy) ── */
     .action-hub {
       display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
       padding: 12px 18px 14px; border-top: 1px solid var(--border);
@@ -703,7 +608,7 @@
     }
     .action-btn-copy.copied { border-color: #10b981; color: #34d399; background: rgba(16,185,129,.18); }
 
-    /* â”€â”€ PROGRESS TRACKER â”€â”€ */
+    /* ── PROGRESS TRACKER ── */
     .chapter-complete-wrap {
       margin-top: 24px; padding: 20px 24px;
       background: var(--card); border: 1.5px solid var(--border);
@@ -732,9 +637,9 @@
     .complete-badge.visible { opacity: 1; }
 
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ══════════════════════════════════════════════
        SCORE CELEBRATION ANIMATIONS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ══════════════════════════════════════════════ */
     @keyframes scoreRainbow {
       0%   { background-position: 0% 50%; }
       50%  { background-position: 100% 50%; }
@@ -846,9 +751,9 @@
       .url-content-frame{height:70vh}
       .site-footer{flex-direction:column;gap:6px;text-align:center}
     }
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       STRIKE FLOATING WIDGET â€” bottom-right corner
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ══════════════════════════════════════════════
+       STRIKE FLOATING WIDGET — bottom-right corner
+    ══════════════════════════════════════════════ */
     .strike-float-wrap {
       position: fixed; bottom: 28px; right: 24px; z-index: 810;
       display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
@@ -895,7 +800,7 @@
     }
     .strike-info-btn:hover { background: rgba(124,106,247,.32); border-color: #7c6af7; color: #fff; }
 
-    /* Tooltip â€” pops upward from the badge */
+    /* Tooltip — pops upward from the badge */
     .strike-tooltip {
       display: none; position: relative;
       width: 260px; background: #1a1a2e;
@@ -937,13 +842,13 @@
       .strike-float-wrap { bottom: 18px; right: 14px; }
       .strike-tooltip { width: 220px; }
     }
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* ── FOOTER ── */
     .site-footer{width:100%;max-width:880px;margin-top:40px;padding:18px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
     .footer-copy{font-size:.78rem;color:var(--muted)}
     .footer-links{display:flex;gap:18px}
     .footer-links a{font-size:.8rem;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .2s}
     .footer-links a:hover{color:var(--accent)}
-    /* â”€â”€ MODAL â”€â”€ */
+    /* ── MODAL ── */
     .bp-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:999;align-items:center;justify-content:center;padding:20px}
     .bp-overlay.open{display:flex}
     .bp-modal{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);width:100%;max-width:620px;max-height:80vh;overflow-y:auto;padding:32px 28px 28px;position:relative;animation:fadeUp .3s ease}
@@ -953,9 +858,9 @@
     .bp-modal .close-btn{position:absolute;top:14px;right:16px;background:transparent;border:1.5px solid var(--border);border-radius:999px;color:var(--muted);font-size:.8rem;padding:5px 13px;cursor:pointer;transition:all .2s}
     .bp-modal .close-btn:hover{border-color:var(--red);color:var(--red)}
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ══════════════════════════════════════
        GUIDE SYSTEM
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ══════════════════════════════════════ */
 
     /* Floating Help Button */
     .guide-fab{
@@ -1037,7 +942,7 @@
     .guide-progress-text{font-size:.76rem;color:#4b6380;text-align:center;margin-top:14px}
 
 
-    /* â”€â”€ Hamburger Panel â€” slides from LEFT â”€â”€ */
+    /* ── Hamburger Panel — slides from LEFT ── */
     .ham-panel {
       position: fixed; top: 0; left: -300px; width: 280px; height: 100vh;
       background: var(--card); border-right: 1.5px solid var(--border);
@@ -1084,7 +989,7 @@
     .ham-item:hover { background: rgba(255,255,255,.06); }
     .ham-divider { height: 1px; background: var(--border); margin: 8px 16px; }
 
-    /* â”€â”€ Hamburger button â€” inside navbar left slot â”€â”€ */
+    /* ── Hamburger button — inside navbar left slot ── */
     .ham-btn {
       position:relative;
       width: 42px; height: 42px; border-radius: 10px;
@@ -1107,9 +1012,9 @@
     .screen-tip-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
     .screen-tip strong{color:#bfdbfe;display:block;margin-bottom:2px}
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       Performance Dashboard â€” CSS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════════════════
+       Performance Dashboard — CSS
+    ════════════════════════════════════════════════════════════ */
     .pd-overlay{
       display:none;position:fixed;inset:0;z-index:2000;
       background:rgba(5,8,20,.92);
@@ -1238,7 +1143,7 @@
     /* Empty state */
     .pd-empty{text-align:center;padding:36px 20px;color:var(--muted);font-size:.88rem;}
     .pd-empty .big{font-size:2.5rem;display:block;margin-bottom:8px;}
-    /* Performance Dashboard â€” entry FAB button (bottom-LEFT, above guide btn) */
+    /* Performance Dashboard — entry FAB button (bottom-LEFT, above guide btn) */
     .pd-fab{
       position:fixed;bottom:80px;left:24px;z-index:810;
       display:flex;align-items:center;gap:7px;
@@ -1251,11 +1156,11 @@
     }
     .pd-fab:hover{background:linear-gradient(135deg,rgba(245,158,11,.3),rgba(59,130,246,.25));transform:translateY(-2px);}
     @media(max-width:480px){.pd-fab{left:14px;bottom:80px;}}
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════════════════ */
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* ════════════════════════════════════════════════
        Badge System CSS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    ════════════════════════════════════════════════ */
     .badge-section-label {
       font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;
       color:var(--muted);padding:12px 16px 6px;font-weight:700;
@@ -1298,12 +1203,12 @@
     .badge-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
     /* Badge count chip in hamburger button */
-    /* #hamBtn{position:relative;} â€” badge chip removed */
+    /* #hamBtn{position:relative;} — badge chip removed */
 
 
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-       Bookmark System â€” CSS
-    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════════════════
+       Bookmark System — CSS
+    ════════════════════════════════════════════════════════════ */
     /* Bookmark button on each question */
     .bm-btn {
       display:inline-flex;align-items:center;gap:5px;
@@ -1424,7 +1329,7 @@
       white-space:nowrap;
     }
     .bm-toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ════════════════════════════════════════════════════════════ */
   </style>
 </head>
 <body>
@@ -1433,7 +1338,7 @@
   <header class="site-header">
     <!-- LEFT: Hamburger slot -->
     <div class="nav-ham-slot">
-      <button class="ham-btn" id="hamBtn" onclick="toggleHamPanel()" title="Menu">â˜°</button>
+      <button class="ham-btn" id="hamBtn" onclick="toggleHamPanel()" title="Menu">☰</button>
     </div>
 
     <!-- CENTER: Logo -->
@@ -1445,146 +1350,135 @@
         <style>@keyframes pulse-draw { to { stroke-dashoffset: 0; } }</style>
       </svg>
       <h1>BachelorPulse</h1>
-      <p>Practice ki Raftaar, Revision ki Shakti.</p>
+      <p>Class 6–10 · NCERT</p>
     </div>
 
     <!-- RIGHT: Balance spacer -->
     <div class="nav-right-slot"></div>
   </header>
 
-  <!-- â•â• STRIKE FLOATING WIDGET (bottom-right) â•â• -->
+  <!-- ══ STRIKE FLOATING WIDGET (bottom-right) ══ -->
   <div class="strike-float-wrap" id="strikeFloatWrap">
     <div class="strike-tooltip" id="strikeTooltip">
       <div class="st-arrow"></div>
-      âš ï¸ <strong>Important:</strong> Your progress is saved locally on this device. If you clear your browser history or site data, your ðŸ”¥ Strike will reset to 0!
+      ⚠️ <strong>Important:</strong> Your progress is saved locally on this device. If you clear your browser history or site data, your 🔥 Strike will reset to 0!
     </div>
     <div class="strike-float-card">
       <div class="strike-badge" id="strikeBadge">
-        <span class="strike-icon" id="strikeIcon">â„ï¸</span>
+        <span class="strike-icon" id="strikeIcon">❄️</span>
         <span class="strike-text" id="strikeText">0 Days Strike</span>
       </div>
-      <button class="strike-info-btn" id="strikeInfoBtn" onclick="toggleStrikeTooltip(event)" title="About Strike">â“˜</button>
+      <button class="strike-info-btn" id="strikeInfoBtn" onclick="toggleStrikeTooltip(event)" title="About Strike">ⓘ</button>
     </div>
   </div>
 
   <div class="breadcrumb" id="breadcrumb"><span>Home</span></div>
 
-  <!-- â•â• SCREEN 1: CLASS â•â• -->
+  <!-- ══ SCREEN 1: CLASS ══ -->
   <div class="screen active" id="s-class">
-    <div class="screen-tip"><span class="screen-tip-icon">ðŸ‘‹</span><div><strong>Welcome to BachelorPulse!</strong>Start by selecting your class below. All content is based on the official NCERT syllabus for Classes 6â€“10.</div></div>
-    <p class="section-title">ðŸ“š Select Your Class</p>
+    <div class="screen-tip"><span class="screen-tip-icon">👋</span><div><strong>Welcome to BachelorPulse!</strong>Start by selecting your class below. All content is based on the official NCERT syllabus for Classes 6–10.</div></div>
+    <p class="section-title">📚 Select Your Class</p>
     <div class="class-grid">
-      <div class="class-card" onclick="selectClass(6)"><span class="emoji">ðŸŒ±</span><div class="class-label">Class 6</div><div class="class-sub">New Beginnings</div></div>
-      <div class="class-card" onclick="selectClass(7)"><span class="emoji">ðŸ“–</span><div class="class-label">Class 7</div><div class="class-sub">Journey of Knowledge</div></div>
-      <div class="class-card" onclick="selectClass(8)"><span class="emoji">ðŸ”­</span><div class="class-label">Class 8</div><div class="class-sub">Path of Discovery</div></div>
-      <div class="class-card" onclick="selectClass(9)"><span class="emoji">âš—ï¸</span><div class="class-label">Class 9</div><div class="class-sub">World of Science</div></div>
-      <div class="class-card" onclick="selectClass(10)"><span class="emoji">ðŸ†</span><div class="class-label">Class 10</div><div class="class-sub">Board Exam Prep</div></div>
+      <div class="class-card" onclick="selectClass(6)"><span class="emoji">🌱</span><div class="class-label">Class 6</div><div class="class-sub">New Beginnings</div></div>
+      <div class="class-card" onclick="selectClass(7)"><span class="emoji">📖</span><div class="class-label">Class 7</div><div class="class-sub">Journey of Knowledge</div></div>
+      <div class="class-card" onclick="selectClass(8)"><span class="emoji">🔭</span><div class="class-label">Class 8</div><div class="class-sub">Path of Discovery</div></div>
+      <div class="class-card" onclick="selectClass(9)"><span class="emoji">⚗️</span><div class="class-label">Class 9</div><div class="class-sub">World of Science</div></div>
+      <div class="class-card" onclick="selectClass(10)"><span class="emoji">🏆</span><div class="class-label">Class 10</div><div class="class-sub">Board Exam Prep</div></div>
     </div>
   </div>
 
-  <!-- â•â• SCREEN 2: SUBJECT â•â• -->
+  <!-- ══ SCREEN 2: SUBJECT ══ -->
   <div class="screen" id="s-subject">
-    <button class="back-btn" onclick="goBack('class')">â† Go Back</button>
-    <div class="screen-tip"><span class="screen-tip-icon">ðŸ“˜</span><div><strong>Choose a Subject</strong>Pick Science, Mathematics, or Social Science. Each subject has all chapters from your selected class.</div></div>
-    <p class="section-title" id="subjectTitle">ðŸ“˜ Select Subject</p>
+    <button class="back-btn" onclick="goBack('class')">← Go Back</button>
+    <div class="screen-tip"><span class="screen-tip-icon">📘</span><div><strong>Choose a Subject</strong>Pick Science, Mathematics, or Social Science. Each subject has all chapters from your selected class.</div></div>
+    <p class="section-title" id="subjectTitle">📘 Select Subject</p>
     <div class="subject-grid">
-      <div class="subject-card" data-subject="science" onclick="selectSubject('science')"><span class="s-emoji">ðŸ”¬</span><div class="s-name">Science</div><div class="s-sub">Biology Â· Physics Â· Chemistry</div></div>
-      <div class="subject-card" data-subject="math"    onclick="selectSubject('math')">   <span class="s-emoji">âž—</span><div class="s-name">Mathematics</div><div class="s-sub">Concepts Â· Problems Â· Formulas</div></div>
-      <div class="subject-card" data-subject="social"  onclick="selectSubject('social')"> <span class="s-emoji">ðŸŒ</span><div class="s-name">Social Science</div><div class="s-sub">History Â· Geography Â· Civics</div></div>
+      <div class="subject-card" data-subject="science" onclick="selectSubject('science')"><span class="s-emoji">🔬</span><div class="s-name">Science</div><div class="s-sub">Biology · Physics · Chemistry</div></div>
+      <div class="subject-card" data-subject="math"    onclick="selectSubject('math')">   <span class="s-emoji">➗</span><div class="s-name">Mathematics</div><div class="s-sub">Concepts · Problems · Formulas</div></div>
+      <div class="subject-card" data-subject="social"  onclick="selectSubject('social')"> <span class="s-emoji">🌍</span><div class="s-name">Social Science</div><div class="s-sub">History · Geography · Civics</div></div>
     </div>
   </div>
 
-  <!-- â•â• SCREEN 3: CHAPTER â•â• -->
+  <!-- ══ SCREEN 3: CHAPTER ══ -->
   <div class="screen" id="s-chapter">
-    <button class="back-btn" onclick="goBack('subject')">â† Go Back</button>
-    <div class="screen-tip"><span class="screen-tip-icon">ðŸ“‘</span><div><strong>Select a Chapter</strong>Tap any chapter below, or use the <strong>âš¡ Practice All Questions</strong> banner at the top to attempt every question from all chapters in one go!</div></div>
-    <p class="section-title" id="chapterTitle">ðŸ“‘ Select Chapter</p>
-
-    <!-- â”€â”€ Practice All Questions Banner â”€â”€ -->
-    <div class="practice-all-banner" id="practiceAllBanner" onclick="practiceAllSubject()">
-      <span class="pab-icon">âš¡</span>
-      <div class="pab-text">
-        <div class="pab-title">Practice All Questions</div>
-        <div class="pab-sub" id="pabSubText">Attempt every MCQ from all chapters of this subject in one go!</div>
-      </div>
-      <span class="pab-arrow">â†’</span>
-    </div>
-
+    <button class="back-btn" onclick="goBack('subject')">← Go Back</button>
+    <div class="screen-tip"><span class="screen-tip-icon">📑</span><div><strong>Select a Chapter</strong>Tap any chapter to start. Use <strong>All Chapters</strong> (at the top) to practice questions from the entire subject at once!</div></div>
+    <p class="section-title" id="chapterTitle">📑 Select Chapter</p>
     <div class="chapter-grid" id="chapterGrid"></div>
   </div>
 
-  <!-- â•â• SCREEN 4: MODE (MCQ / Solution / Learn) â•â• -->
+  <!-- ══ SCREEN 4: MODE (MCQ / Solution / Learn) ══ -->
   <div class="screen" id="s-mode">
-    <button class="back-btn" onclick="goBack('chapter')">â† Go Back</button>
-    <div class="screen-tip"><span class="screen-tip-icon">âš¡</span><div><strong>Choose What to Do</strong><strong>MCQ</strong> â€” Test yourself with multiple choice questions. <strong>Solution</strong> â€” Read step-by-step solved answers. <strong>Learn</strong> â€” Study short notes or a visual mind map.</div></div>
-    <p class="section-title" id="modeTitle">âš¡ What do you want to do?</p>
+    <button class="back-btn" onclick="goBack('chapter')">← Go Back</button>
+    <div class="screen-tip"><span class="screen-tip-icon">⚡</span><div><strong>Choose What to Do</strong><strong>MCQ</strong> — Test yourself with multiple choice questions. <strong>Solution</strong> — Read step-by-step solved answers. <strong>Learn</strong> — Study short notes or a visual mind map.</div></div>
+    <p class="section-title" id="modeTitle">⚡ What do you want to do?</p>
     <div class="mode-grid">
       <div class="mode-card" data-mode="mcq" onclick="selectMode('mcq')">
-        <span class="mode-icon">ðŸ“</span>
+        <span class="mode-icon">📝</span>
         <div class="mode-name">MCQ</div>
         <div class="mode-desc">Practice multiple choice questions and test your knowledge</div>
       </div>
       <div class="mode-card" data-mode="solution" onclick="selectMode('solution')">
-        <span class="mode-icon">âœ…</span>
+        <span class="mode-icon">✅</span>
         <div class="mode-name">Solution</div>
         <div class="mode-desc">Step-by-step solved answers and explanations</div>
       </div>
       <div class="mode-card" data-mode="learn" onclick="selectMode('learn')">
-        <span class="mode-icon">ðŸ“š</span>
+        <span class="mode-icon">📚</span>
         <div class="mode-name">Learn</div>
         <div class="mode-desc">Short notes and mind maps for quick revision</div>
       </div>
     </div>
   </div>
 
-  <!-- â•â• SCREEN 5: LEARN SUB-OPTIONS â•â• -->
+  <!-- ══ SCREEN 5: LEARN SUB-OPTIONS ══ -->
   <div class="screen" id="s-learn">
-    <button class="back-btn" onclick="goBack('mode')">â† Go Back</button>
-    <div class="screen-tip"><span class="screen-tip-icon">ðŸ“–</span><div><strong>Pick Your Learning Style</strong><strong>Short Note</strong> â€” Quick bullet-point summary, great for last-minute revision. <strong>Mind Map</strong> â€” A visual diagram connecting all key ideas. Tap the image to zoom in fully!</div></div>
-    <p class="section-title" id="learnTitle">ðŸ“– Choose Learning Style</p>
+    <button class="back-btn" onclick="goBack('mode')">← Go Back</button>
+    <div class="screen-tip"><span class="screen-tip-icon">📖</span><div><strong>Pick Your Learning Style</strong><strong>Short Note</strong> — Quick bullet-point summary, great for last-minute revision. <strong>Mind Map</strong> — A visual diagram connecting all key ideas. Tap the image to zoom in fully!</div></div>
+    <p class="section-title" id="learnTitle">📖 Choose Learning Style</p>
     <div class="learn-grid">
       <div class="learn-card" data-learn="shortnote" onclick="selectLearn('shortnote')">
-        <span class="learn-icon">ðŸ“‹</span>
+        <span class="learn-icon">📋</span>
         <div class="learn-name">Short Note</div>
         <div class="learn-desc">Concise bullet-point notes covering all key concepts of the chapter</div>
       </div>
       <div class="learn-card" data-learn="mindmap" onclick="selectLearn('mindmap')">
-        <span class="learn-icon">ðŸ§ </span>
+        <span class="learn-icon">🧠</span>
         <div class="learn-name">Mind Map</div>
         <div class="learn-desc">Visual mind map to connect and remember all chapter topics</div>
       </div>
     </div>
   </div>
 
-  <!-- â•â• SCREEN 6: COUNT â•â• -->
+  <!-- ══ SCREEN 6: COUNT ══ -->
   <div class="screen" id="s-count">
-    <button class="back-btn" onclick="goBack('mode')">â† Go Back</button>
-    <div class="screen-tip"><span class="screen-tip-icon">ðŸŽ¯</span><div><strong>How Many Questions?</strong>Questions are picked randomly each time, so every quiz is unique! Start with <strong>10</strong> for a quick check, or go for <strong>100</strong> for full exam practice.</div></div>
-    <p class="section-title" id="countTitle">ðŸŽ¯ How Many Questions?</p>
+    <button class="back-btn" onclick="goBack('mode')">← Go Back</button>
+    <div class="screen-tip"><span class="screen-tip-icon">🎯</span><div><strong>How Many Questions?</strong>Questions are picked randomly each time, so every quiz is unique! Start with <strong>10</strong> for a quick check, or go for <strong>100</strong> for full exam practice.</div></div>
+    <p class="section-title" id="countTitle">🎯 How Many Questions?</p>
     <div class="count-grid">
-      <div class="count-card" data-count="10"  onclick="selectCount(10)"> <div class="count-num">10</div> <div class="count-label">Questions</div><div class="count-badge">âš¡ Quick Test</div></div>
-      <div class="count-card" data-count="25"  onclick="selectCount(25)"> <div class="count-num">25</div> <div class="count-label">Questions</div><div class="count-badge">ðŸŽ¯ Short Quiz</div></div>
-      <div class="count-card" data-count="50"  onclick="selectCount(50)"> <div class="count-num">50</div> <div class="count-label">Questions</div><div class="count-badge">ðŸ“š Practice Set</div></div>
-      <div class="count-card" data-count="100" onclick="selectCount(100)"><div class="count-num">100</div><div class="count-label">Questions</div><div class="count-badge">ðŸ† Full Exam</div></div>
+      <div class="count-card" data-count="10"  onclick="selectCount(10)"> <div class="count-num">10</div> <div class="count-label">Questions</div><div class="count-badge">⚡ Quick Test</div></div>
+      <div class="count-card" data-count="25"  onclick="selectCount(25)"> <div class="count-num">25</div> <div class="count-label">Questions</div><div class="count-badge">🎯 Short Quiz</div></div>
+      <div class="count-card" data-count="50"  onclick="selectCount(50)"> <div class="count-num">50</div> <div class="count-label">Questions</div><div class="count-badge">📚 Practice Set</div></div>
+      <div class="count-card" data-count="100" onclick="selectCount(100)"><div class="count-num">100</div><div class="count-label">Questions</div><div class="count-badge">🏆 Full Exam</div></div>
     </div>
   </div>
 
-  <!-- â•â• SCREEN 7: QUIZ (in-app) â•â• -->
+  <!-- ══ SCREEN 7: QUIZ (in-app) ══ -->
   <div class="screen" id="s-quiz">
     <div id="quizScreen"></div>
   </div>
 
-  <!-- â•â• SCREEN 8: URL CONTENT VIEWER (Solution / Short Note / Mind Map) â•â• -->
+  <!-- ══ SCREEN 8: URL CONTENT VIEWER (Solution / Short Note / Mind Map) ══ -->
   <div class="screen" id="s-urlviewer">
-    <button class="back-btn" id="urlViewerBackBtn" onclick="urlViewerBack()">â† Go Back</button>
+    <button class="back-btn" id="urlViewerBackBtn" onclick="urlViewerBack()">← Go Back</button>
     <div id="urlViewerContainer"></div>
   </div>
 
-  <!-- â”€â”€ FOOTER â”€â”€ -->
+  <!-- ── FOOTER ── -->
   <footer class="site-footer">
-    <span class="footer-copy">Â© 2025 BachelorPulse. All rights reserved.</span>
+    <span class="footer-copy">© 2025 BachelorPulse. All rights reserved.</span>
     <nav class="footer-links">
-      <a onclick="openGuide()">ðŸ“– Guide</a>
+      <a onclick="openGuide()">📖 Guide</a>
       <a onclick="openModal('about')">About</a>
       <a onclick="openModal('privacy')">Privacy</a>
       <a onclick="openModal('contact')">Contact</a>
@@ -1592,23 +1486,23 @@
   </footer>
 </div>
 
-<!-- â”€â”€ CONFETTI CANVAS â”€â”€ -->
+<!-- ── CONFETTI CANVAS ── -->
 <canvas id="confettiCanvas"></canvas>
-<!-- â”€â”€ STRIKE MILESTONE TOAST â”€â”€ -->
+<!-- ── STRIKE MILESTONE TOAST ── -->
 <div class="strike-toast" id="strikeMilestoneToast"></div>
-<!-- Badge System â€” badge unlock toast -->
+<!-- Badge System — badge unlock toast -->
 <div class="badge-toast" id="badgeToast"></div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     Performance Dashboard â€” HTML
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<button class="pd-fab" onclick="PerfDash.open()" title="Performance Dashboard">ðŸ“Š My Progress</button>
+<!-- ════════════════════════════════════════════════════════════
+     Performance Dashboard — HTML
+════════════════════════════════════════════════════════════ -->
+<button class="pd-fab" onclick="PerfDash.open()" title="Performance Dashboard">📊 My Progress</button>
 
 <div class="pd-overlay" id="pdOverlay">
   <div class="pd-shell">
     <div class="pd-topbar">
-      <div class="pd-title">ðŸ“Š Performance Dashboard</div>
-      <button class="pd-close" onclick="PerfDash.close()" title="Close">âœ•</button>
+      <div class="pd-title">📊 Performance Dashboard</div>
+      <button class="pd-close" onclick="PerfDash.close()" title="Close">✕</button>
     </div>
 
     <!-- Tab bar -->
@@ -1627,7 +1521,7 @@
       <div class="pd-card" id="pdTimeCard"></div>
     </div>
 
-    <!-- TAB: Weekly (Monâ€“Sun) -->
+    <!-- TAB: Weekly (Mon–Sun) -->
     <div class="pd-panel" id="pd-panel-weekly">
       <div class="pd-card" id="pdWeeklyBar"></div>
       <div class="pd-card" id="pdAccuracyBar"></div>
@@ -1651,11 +1545,11 @@
     </div>
   </div>
 </div>
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════════════════════════════════════════════════════════════ -->
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     Bookmark System â€” HTML (Panel + Toast)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════════════════════════════════════════════════════════════
+     Bookmark System — HTML (Panel + Toast)
+════════════════════════════════════════════════════════════ -->
 <div id="bm-toast"></div>
 
 <div id="bm-overlay">
@@ -1663,16 +1557,16 @@
 
     <!-- Top bar -->
     <div id="bm-topbar">
-      <div id="bm-title">ðŸ”– Bookmarked Questions</div>
-      <button id="bm-close" onclick="BookmarkSystem.close()" title="Close">âœ•</button>
+      <div id="bm-title">🔖 Bookmarked Questions</div>
+      <button id="bm-close" onclick="BookmarkSystem.close()" title="Close">✕</button>
     </div>
 
     <!-- Filter bar -->
     <div class="bm-filters">
       <button class="bm-filter active" data-f="all"     onclick="BookmarkSystem.setFilter(this,'all')">All</button>
-      <button class="bm-filter"        data-f="correct" onclick="BookmarkSystem.setFilter(this,'correct')">âœ… Correct</button>
-      <button class="bm-filter"        data-f="wrong"   onclick="BookmarkSystem.setFilter(this,'wrong')">âŒ Wrong</button>
-      <button class="bm-filter"        data-f="unanswered" onclick="BookmarkSystem.setFilter(this,'unanswered')">â¬œ Skipped</button>
+      <button class="bm-filter"        data-f="correct" onclick="BookmarkSystem.setFilter(this,'correct')">✅ Correct</button>
+      <button class="bm-filter"        data-f="wrong"   onclick="BookmarkSystem.setFilter(this,'wrong')">❌ Wrong</button>
+      <button class="bm-filter"        data-f="unanswered" onclick="BookmarkSystem.setFilter(this,'unanswered')">⬜ Skipped</button>
     </div>
 
     <!-- Count + list -->
@@ -1681,23 +1575,23 @@
 
   </div>
 </div>
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════════════════════════════════════════════════════════════ -->
 
-<!-- â”€â”€ LIGHTBOX (HD Viewer) â”€â”€ -->
+<!-- ── LIGHTBOX (HD Viewer) ── -->
 <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightboxOutside(event)">
-  <button class="lightbox-close" onclick="closeLightbox()" title="Close (Esc)">âœ•</button>
+  <button class="lightbox-close" onclick="closeLightbox()" title="Close (Esc)">✕</button>
   <div class="lightbox-label" id="lightboxLabel"></div>
   <!-- Zoom controls fixed bottom-right in lightbox -->
   <div class="lb-zoom-controls" id="lbZoomControls" style="display:none;">
-    <button class="lb-zoom-btn" onclick="lbZoom(1.25)" title="Zoom In">ï¼‹</button>
+    <button class="lb-zoom-btn" onclick="lbZoom(1.25)" title="Zoom In">＋</button>
     <span  class="lb-zoom-pct" id="lbZoomPct">100%</span>
-    <button class="lb-zoom-btn" onclick="lbZoom(0.8)"  title="Zoom Out">ï¼</button>
-    <button class="lb-zoom-btn lb-zoom-reset" onclick="lbZoomReset()" title="Reset">â†º</button>
+    <button class="lb-zoom-btn" onclick="lbZoom(0.8)"  title="Zoom Out">－</button>
+    <button class="lb-zoom-btn lb-zoom-reset" onclick="lbZoomReset()" title="Reset">↺</button>
   </div>
   <div class="lightbox-scroll" id="lightboxScroll">
     <div class="lightbox-img-wrap" id="lightboxImgWrap" onclick="event.stopPropagation()">
       <div class="lightbox-img-spinner" id="lightboxSpinner">
-        <span class="lightbox-spin-icon">â³</span>
+        <span class="lightbox-spin-icon">⏳</span>
         <span>Loading HD Image...</span>
       </div>
       <img id="lightboxImg" src="" alt="Mind Map Full View"
@@ -1705,56 +1599,56 @@
         style="image-rendering:crisp-edges;image-rendering:-webkit-optimize-contrast;-ms-interpolation-mode:nearest-neighbor;cursor:grab;user-select:none;" />
     </div>
   </div>
-  <div class="lightbox-mobile-hint">ðŸ“± Pinch to zoom &nbsp;Â·&nbsp; Scroll to pan</div>
-  <!-- â”€â”€ AdSense Revenue Strip â”€â”€ -->
+  <div class="lightbox-mobile-hint">📱 Pinch to zoom &nbsp;·&nbsp; Scroll to pan</div>
+  <!-- ── AdSense Revenue Strip ── -->
   <div class="lightbox-adsense-strip" id="lightboxAdStrip">
     <span class="lb-ad-label">Advertisement</span>
-    <!-- AdSense banner slot â€” replace with your ad unit code -->
+    <!-- AdSense banner slot — replace with your ad unit code -->
     <!-- <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="banner"></ins> -->
   </div>
 </div>
 
-<!-- â”€â”€ MODAL OVERLAY â”€â”€ -->
+<!-- ── MODAL OVERLAY ── -->
 <div class="bp-overlay" id="bpOverlay" onclick="closeModalOutside(event)">
   <div class="bp-modal" id="bpModal">
-    <button class="close-btn" onclick="closeModal()">âœ• Close</button>
+    <button class="close-btn" onclick="closeModal()">✕ Close</button>
     <div id="bpModalBody"></div>
   </div>
 </div>
 
-<!-- â”€â”€ FLOATING HELP BUTTON â”€â”€ -->
-<button class="guide-fab" onclick="openGuide()" title="How to use BachelorPulse">â“</button>
+<!-- ── FLOATING HELP BUTTON ── -->
+<button class="guide-fab" onclick="openGuide()" title="How to use BachelorPulse">❓</button>
 
-<!-- â”€â”€ Hamburger Overlay + Panel â”€â”€ -->
+<!-- ── Hamburger Overlay + Panel ── -->
 <div class="ham-overlay" id="hamOverlay" onclick="closeHamPanel()"></div>
 <div class="ham-panel" id="hamPanel">
   <div class="ham-header">
     <span class="ham-title">BachelorPulse</span>
-    <button class="ham-close" onclick="closeHamPanel()">âœ•</button>
+    <button class="ham-close" onclick="closeHamPanel()">✕</button>
   </div>
   <div class="ham-body">
     <div class="ham-section-label">Navigation</div>
-    <div class="ham-item" onclick="closeHamPanel(); goHome()">ðŸ  Home</div>
-    <div class="ham-item" onclick="closeHamPanel(); openGuide()">ðŸ“– How to Use</div>
+    <div class="ham-item" onclick="closeHamPanel(); goHome()">🏠 Home</div>
+    <div class="ham-item" onclick="closeHamPanel(); openGuide()">📖 How to Use</div>
     <div class="ham-divider"></div>
     <div class="ham-section-label">Features</div>
-    <div class="ham-item" onclick="closeHamPanel(); PerfDash.open()">ðŸ“Š Performance</div>
-    <div class="ham-item" onclick="closeHamPanel(); BookmarkSystem.open()">ðŸ”– Bookmarks <span id="bmHamCount" style="margin-left:auto;font-size:.7rem;background:rgba(245,158,11,.15);color:var(--accent);border-radius:999px;padding:1px 8px;font-weight:700;display:none;">0</span></div>
+    <div class="ham-item" onclick="closeHamPanel(); PerfDash.open()">📊 Performance</div>
+    <div class="ham-item" onclick="closeHamPanel(); BookmarkSystem.open()">🔖 Bookmarks <span id="bmHamCount" style="margin-left:auto;font-size:.7rem;background:rgba(245,158,11,.15);color:var(--accent);border-radius:999px;padding:1px 8px;font-weight:700;display:none;">0</span></div>
     <div class="ham-divider"></div>
-    <!-- Badge System â€” badges section (lazy rendered on first open) -->
-    <div class="badge-section-label">ðŸ† My Badges <span id="badgeCountLabel" style="color:var(--accent);font-size:.7rem;"></span></div>
+    <!-- Badge System — badges section (lazy rendered on first open) -->
+    <div class="badge-section-label">🏆 My Badges <span id="badgeCountLabel" style="color:var(--accent);font-size:.7rem;"></span></div>
     <div class="badge-grid" id="badgeGrid">
       <div style="grid-column:1/-1;text-align:center;padding:18px 0;color:var(--muted);font-size:.82rem;">Opening...</div>
     </div>
     <div class="ham-divider"></div>
     <div class="ham-section-label">Info</div>
-    <div class="ham-item" onclick="closeHamPanel(); openModal('about')">â„¹ï¸ About</div>
-    <div class="ham-item" onclick="closeHamPanel(); openModal('privacy')">ðŸ”’ Privacy Policy</div>
-    <div class="ham-item" onclick="closeHamPanel(); openModal('contact')">ðŸ“¬ Contact Us</div>
+    <div class="ham-item" onclick="closeHamPanel(); openModal('about')">ℹ️ About</div>
+    <div class="ham-item" onclick="closeHamPanel(); openModal('privacy')">🔒 Privacy Policy</div>
+    <div class="ham-item" onclick="closeHamPanel(); openModal('contact')">📬 Contact Us</div>
   </div>
 </div>
 
-<!-- â”€â”€ GUIDE TOUR OVERLAY â”€â”€ -->
+<!-- ── GUIDE TOUR OVERLAY ── -->
 <div class="guide-overlay" id="guideOverlay">
   <div class="guide-card">
     <div class="guide-dots" id="guideDots"></div>
@@ -1764,43 +1658,52 @@
     <div class="guide-nav">
       <button class="guide-skip" onclick="closeGuide()">Skip Tour</button>
       <div class="guide-nav-right">
-        <button class="guide-btn guide-btn-prev" id="guidePrev" onclick="guideStep(-1)">â† Back</button>
-        <button class="guide-btn guide-btn-next" id="guideNext" onclick="guideStep(1)">Next â†’</button>
+        <button class="guide-btn guide-btn-prev" id="guidePrev" onclick="guideStep(-1)">← Back</button>
+        <button class="guide-btn guide-btn-next" id="guideNext" onclick="guideStep(1)">Next →</button>
       </div>
     </div>
     <div class="guide-progress-text" id="guideProgress"></div>
   </div>
 </div>
-
-<div id="loader" style="display:none;"></div>
-<div id="mindmapContainer"></div>
-<div id="updateNotice" style="display:none; cursor:pointer;" onclick="location.reload()"></div>
-
 <script>
 /* ================================================================
-   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆ   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆ       â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ
-   â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ      â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ      â–ˆâ–ˆ      â–ˆâ–ˆ    â–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ
-   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆ      â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆ   â–ˆâ–ˆ      â–ˆâ–ˆ    â–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ
-   â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ      â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆ      â–ˆâ–ˆ      â–ˆâ–ˆ    â–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ
-   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆ   â–ˆâ–ˆ  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆ   â–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆ   â–ˆâ–ˆ
+   ██████   █████   ██████ ██   ██ ███████ ██       ██████  ██████
+   ██   ██ ██   ██ ██      ██   ██ ██      ██      ██    ██ ██   ██
+   ██████  ███████ ██      ███████ █████   ██      ██    ██ ██████
+   ██   ██ ██   ██ ██      ██   ██ ██      ██      ██    ██ ██   ██
+   ██████  ██   ██  ██████ ██   ██ ███████ ███████  ██████  ██   ██
 
-   CONTENT SYSTEM: AUTO URL + VERSION CACHE (GitHub Pages)
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   âœ… Single BASE_URL source
-   âœ… Dynamic chapter-wise file naming
-   âœ… Version-aware smart caching
-   âœ… Auto-update notice when new content is uploaded
-   âœ… MCQ JSON short+long key formats supported
+   CONTENT SYSTEM: MANUAL MAPPING (Pro Max)
+   ──────────────────────────────────────────
+   ✅ No auto-URL generation happens
+   ✅ Only URLs from CONFIG_DATA are fetched
+   ✅ If URL is missing → "Coming Soon" is shown
+   ✅ q / o / a / sol short keys are supported
+   ✅ Loading screen is shown until data is available
+
+   HOW TO ADD YOUR LINKS:
+   ──────────────────────
+   CONFIG_DATA[6]["science"]["Chapter 1: The Wonderful World of Science"] = {
+     mcq      : "https://raw.githubusercontent.com/YourName/repo/main/file.json",
+     solution : "https://raw.githubusercontent.com/YourName/repo/main/file.pdf",
+     shortnote: "https://raw.githubusercontent.com/YourName/repo/main/file.pdf",
+     mindmap  : "https://raw.githubusercontent.com/YourName/repo/main/file.jpg"
+   };
+
+   MCQ JSON FORMAT (dono formats chalenge):
+   Short: { "q": "...", "o": ["A","B","C","D"], "a": 0 }
+   Long : { "question": "...", "options": [...], "correct": 0 }
+   (correct/a: 0=A, 1=B, 2=C, 3=D)
    ================================================================ */
 
 /* ================================================================
-   CHAPTER STRUCTURE  (add chapters here â€” stays in the HTML file)
+   CHAPTER STRUCTURE  (add chapters here — stays in the HTML file)
    Structure: CHAPTERS[class][subject] = [ "Chapter 1: ...", ... ]
    ================================================================ */
 const CHAPTERS = {};
 for (let c = 6; c <= 10; c++) CHAPTERS[c] = { science:[], math:[], social:[] };
 
-// â”€â”€â”€ CLASS 6 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CLASS 6 ───────────────────────────────────────────────────
 CHAPTERS[6].science = [
   "Chapter 1: The Wonderful World of Science",
   "Chapter 2: Diversity in the Living World",
@@ -1837,14 +1740,14 @@ CHAPTERS[6].social = [
   "Chapter 7: India's Cultural Roots",
   "Chapter 8: Unity in Diversity, or 'Many in the One'",
   "Chapter 9: Family and Community",
-  "Chapter 10: Grassroots Democracy â€” Part 1: Governance",
-  "Chapter 11: Grassroots Democracy â€” Part 2: Local Government in Rural Areas",
-  "Chapter 12: Grassroots Democracy â€” Part 3: Local Government in Urban Areas",
+  "Chapter 10: Grassroots Democracy — Part 1: Governance",
+  "Chapter 11: Grassroots Democracy — Part 2: Local Government in Rural Areas",
+  "Chapter 12: Grassroots Democracy — Part 3: Local Government in Urban Areas",
   "Chapter 13: The Value of Work",
   "Chapter 14: Economic Activities Around Us"
 ];
 
-// â”€â”€â”€ CLASS 7 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CLASS 7 ───────────────────────────────────────────────────
 CHAPTERS[7].science = [
   "Chapter 1: The Ever-Evolving World of Science",
   "Chapter 2: Exploring Substances: Acidic, Basic, and Neutral",
@@ -1899,7 +1802,7 @@ CHAPTERS[7].social = [
   "Chapter 20: Banks and the Magic of Finance"
 ];
 
-// â”€â”€â”€ CLASS 8 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CLASS 8 ───────────────────────────────────────────────────
 CHAPTERS[8].science = [
   "Chapter 1: Exploring the Investigative World of Science",
   "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
@@ -1962,7 +1865,7 @@ CHAPTERS[8].social = [
   "Chapter 28: Human Resources"
 ];
 
-// â”€â”€â”€ CLASS 9 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CLASS 9 ───────────────────────────────────────────────────
 CHAPTERS[9].science = [
   "Chapter 1: Matter in Our Surroundings",
   "Chapter 2: Is Matter Around Us Pure?",
@@ -2000,7 +1903,7 @@ CHAPTERS[9].social = [
   "Chapter 6: Peasants and Farmers",
   "Chapter 7: History and Sport: The Story of Cricket",
   "Chapter 8: Clothing: A Social History",
-  "Chapter 9: India â€” Size and Location",
+  "Chapter 9: India — Size and Location",
   "Chapter 10: Physical Features of India",
   "Chapter 11: Drainage",
   "Chapter 12: Climate",
@@ -2017,7 +1920,7 @@ CHAPTERS[9].social = [
   "Chapter 23: Food Security in India"
 ];
 
-// â”€â”€â”€ CLASS 10 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CLASS 10 ──────────────────────────────────────────────────
 CHAPTERS[10].science = [
   "Chapter 1: Chemical Reactions and Equations",
   "Chapter 2: Acids, Bases and Salts",
@@ -2027,7 +1930,7 @@ CHAPTERS[10].science = [
   "Chapter 6: Control and Coordination",
   "Chapter 7: How do Organisms Reproduce?",
   "Chapter 8: Heredity",
-  "Chapter 9: Light â€” Reflection and Refraction",
+  "Chapter 9: Light — Reflection and Refraction",
   "Chapter 10: The Human Eye and the Colourful World",
   "Chapter 11: Electricity",
   "Chapter 12: Magnetic Effects of Electric Current",
@@ -2050,358 +1953,414 @@ CHAPTERS[10].math = [
   "Chapter 14: Probability"
 ];
 CHAPTERS[10].social = [
-  /* History â€“ India and the Contemporary World II */
   "Chapter 1: The Rise of Nationalism in Europe",
   "Chapter 2: Nationalism in India",
   "Chapter 3: The Making of a Global World",
   "Chapter 4: The Age of Industrialisation",
   "Chapter 5: Print Culture and the Modern World",
-  /* Geography â€“ Contemporary India II */
   "Chapter 6: Resources and Development",
   "Chapter 7: Forest and Wildlife Resources",
   "Chapter 8: Water Resources",
   "Chapter 9: Agriculture",
   "Chapter 10: Minerals and Energy Resources",
   "Chapter 11: Manufacturing Industries",
-  "Chapter 12: Lifelines of the National Economy",
-  /* Political Science â€“ Democratic Politics II */
+  "Chapter 12: Lifelines of National Economy",
   "Chapter 13: Power Sharing",
   "Chapter 14: Federalism",
-  "Chapter 15: Gender, Religion and Caste",
-  "Chapter 16: Political Parties",
-  "Chapter 17: Outcomes of Democracy",
-  /* Economics â€“ Understanding Economic Development */
-  "Chapter 18: Development",
-  "Chapter 19: Sectors of the Indian Economy",
-  "Chapter 20: Money and Credit",
-  "Chapter 21: Globalisation and the Indian Economy",
-  "Chapter 22: Consumer Rights"
+  "Chapter 15: Democracy and Diversity",
+  "Chapter 16: Gender, Religion and Caste",
+  "Chapter 17: Popular Struggles and Movements",
+  "Chapter 18: Political Parties",
+  "Chapter 19: Outcomes of Democracy",
+  "Chapter 20: Challenges to Democracy",
+  "Chapter 21: Development",
+  "Chapter 22: Sectors of the Indian Economy",
+  "Chapter 23: Money and Credit",
+  "Chapter 24: Globalisation and the Indian Economy",
+  "Chapter 25: Consumer Rights"
 ];
 
 /* ================================================================
-   CONTENT SYSTEM: AUTO URL + VERSION CACHE
-   - BASE_URL is the only source for MCQ and Mind Map files
-   - Chapter URLs are generated dynamically from class/subject/chapter
-   - version.json controls cache invalidation and update checks
+   ██████╗ ██████╗  ██████╗      ███╗   ███╗ █████╗ ██╗  ██╗
+   ██╔══██╗██╔══██╗██╔═══██╗     ████╗ ████║██╔══██╗╚██╗██╔╝
+   ██████╔╝██████╔╝██║   ██║     ██╔████╔██║███████║ ╚███╔╝
+   ██╔═══╝ ██╔══██╗██║   ██║     ██║╚██╔╝██║██╔══██║ ██╔██╗
+   ██║     ██║  ██║╚██████╔╝     ██║ ╚═╝ ██║██║  ██║██╔╝ ██╗
+   ╚═╝     ╚═╝  ╚═╝ ╚═════╝      ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+   CONFIG_DATA — MANUAL URL MAPPING SYSTEM
+   ─────────────────────────────────────────────────────────────────
+   Paste only your GitHub Raw URLs here.
+   The code will NOT auto-generate any URL.
+
+   FORMAT:
+     CONFIG_DATA[classNum][subject]["Chapter X: Title"] = {
+       mcq       : "https://raw.githubusercontent.com/..../file.json",
+       solution  : "https://raw.githubusercontent.com/..../file.pdf",
+       shortnote : "https://raw.githubusercontent.com/..../file.pdf",
+       mindmap   : "https://raw.githubusercontent.com/..../file.jpg"
+     };
+
+   RULES:
+   ✅ Only add the type for which you have a URL
+   ✅ Leaving other types empty will show "Coming Soon"
+   ✅ JSON with q, o, a, sol format is also supported (short keys)
+   ✅ If no URL is added for a chapter, all options show "Coming Soon"
+
+   EXAMPLE:
+     CONFIG_DATA[6]["science"]["Chapter 1: The Wonderful World of Science"] = {
+       mcq      : "https://raw.githubusercontent.com/yourname/repo/main/c6_sci_ch1.json",
+       solution : "https://raw.githubusercontent.com/yourname/repo/main/c6_sci_ch1_sol.pdf"
+     };
    ================================================================ */
 
-const BASE_URL = "https://bachelorpulse.github.io/bachelorpulsedata/";
-
-const subjectMap = {
-  science: "sci",
-  math: "math",
-  social: "sst",
-  sst: "sst"
-};
-
-/*
-  Optional chapter-level overrides:
-  CONFIG_DATA[class][subject][chapterTitle] = { solution, shortnote, ... }
-*/
 const CONFIG_DATA = {};
 
-const BACKUP_MCQ_URL = "backup.json";
-const VERSION_FILE = "version.json";
-const VERSION_FALLBACK = "1";
-const VERSION_CACHE_TTL_MS = 60 * 1000;
-const UPDATE_CHECK_INTERVAL_MS = 2 * 60 * 1000;
+/* ── Initialize empty structure for all classes & subjects ── */
+for (let c = 6; c <= 10; c++) {
+  CONFIG_DATA[c] = { science: {}, math: {}, social: {} };
+}
 
-const versionState = {
-  value: VERSION_FALLBACK,
-  fetchedAt: 0,
-  pending: null
+/* ================================================================
+   📌 CLASS 6 — SCIENCE
+   ================================================================ */
+
+CONFIG_DATA[6]["science"]["Chapter 1: The Wonderful World of Science"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science%20_chapter_1.json",
+  mindmap: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sci_ch1_mm.jpg"
+};
+CONFIG_DATA[6]["science"]["Chapter 2: Diversity in the Living World"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/science%20class%206%20chapter2.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 3: Mindful Eating: A Path to a Healthy Body"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/classs6_chapter3_science.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 4: Exploring Magnets"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter4.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 5: Measurement of Length and Motion"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter5.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 6: Materials Around Us"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter6.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 7: Temperature and its Measurement"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter7.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 8: A Journey through States of Water"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter8.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 9: Methods of Separation in Everyday Life"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter9.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 10: Living Creatures: Exploring their Characteristics"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter10.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 11: Nature's Treasures"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter11.json"
+};
+CONFIG_DATA[6]["science"]["Chapter 12: Beyond Earth"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class6_science_chapter12.json"
 };
 
-let currentVersion = null;
-let updatePollTimer = null;
+/* ================================================================
+   📌 CLASS 6 — MATH
+   ================================================================ */
+CONFIG_DATA[6]["math"]["Chapter 1: Patterns in Mathematics"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch1_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 2: Lines and Angles"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch2_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 3: Number Play"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch3_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 4: Data Handling and Presentation"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch4_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 5: Prime Time"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch5_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 6: Perimeter and Area"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch6_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 7: Fractions"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch7_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 8: Playing with Constructions"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch8_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 9: Symmetry"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch9_mcq.json"
+};
+CONFIG_DATA[6]["math"]["Chapter 10: The Other Side of Zero"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_math_ch10_mcq.json"
+};
 
-const mcqCache = new Map();
-const pendingMCQLoads = new Map();
-const mindMapCache = new Map();
-const pendingMindMapLoads = new Map();
-const unavailableByVersion = new Map();
+/* ================================================================
+   📌 CLASS 6 — SOCIAL
+   ================================================================ */
+CONFIG_DATA[6]["social"]["Chapter 1: Locating Places on the Earth"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch1_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 2: Oceans and Continents"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch2_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 3: Landforms and Life"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch3_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 4: Timeline and Sources of History"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch4_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 5: India, That Is Bharat"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch5_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 6: The Beginnings of Indian Civilisation"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch6_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 7: India's Cultural Roots"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch7_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 8: Unity in Diversity, or 'Many in the One"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch8_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 9: Family and Community"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch9_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 10: Grassroots Democracy — Part 1: Governance"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch10_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 11: Grassroots Democracy — Part 2: Local Government in Rural Areas"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch11_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 12: Grassroots Democracy — Part 3: Local Government in Urban Areas"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch12_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 13: The Value of Work"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch13_mcq.json"
+};
+CONFIG_DATA[6]["social"]["Chapter 14: Economic Activities Around Us"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/6_sst_ch14_mcq.json"
+};
 
-function normalizeSubject(subject) {
-  const key = String(subject || "").trim().toLowerCase();
-  return subjectMap[key] || key;
-}
+/* ================================================================
+   📌 CLASS 7 — SCIENCE
+   ================================================================ */
 
-function extractChapterNumber(chapterStr) {
-  if (Number.isFinite(Number(chapterStr))) return Number(chapterStr);
-  const match = String(chapterStr || "").match(/chapter\s*(\d+)/i);
-  return match ? Number(match[1]) : NaN;
-}
+CONFIG_DATA[7]["science"]["Chapter 1: The Ever-Evolving World of Science"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter1_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 2: Exploring Substances: Acidic, Basic, and Neutral"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter2_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 3: Electricity: Circuits and their Components"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter3_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 4: The World of Metals and Non-metals"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter4_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 5: Changes Around Us: Physical and Chemical"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter5_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 6: Adolescence: A Stage of Growth and Change"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter6_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 7: Heat Transfer in Nature"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter7_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 8: Measurement of Time and Motion"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter8_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 9: Life Processes in Animals"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter9_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 10: Life Processes in Plants"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter10_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 11: Light: Shadows and Reflections"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter11_mcq.json"
+};
+CONFIG_DATA[7]["science"]["Chapter 12: Earth, Moon, and the Sun"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class7_science_chapter12_mcq.json"
+};
 
-function normalizeMCQData(data, chapterLabel) {
-  if (!Array.isArray(data)) return [];
-  return data.map(item => ({
-    question: item.question || item.q || "",
-    options: Array.isArray(item.options) ? item.options : (Array.isArray(item.o) ? item.o : []),
-    correct: item.correct !== undefined ? item.correct : (item.a !== undefined ? item.a : 0),
-    sol: item.sol || item.solution || "",
-    _chapter: chapterLabel || item._chapter || ""
-  })).filter(item => item.question && item.options.length);
-}
+/* ================================================================
+   📌 CLASS 7 — MATH
+   ================================================================ */
+CONFIG_DATA[7]["math"]["Chapter 1: Large Numbers Around Us"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch1_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 2: Arithmetic Expressions"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch2_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 3: A Peek Beyond the Point"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch3_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 4: Expressions using Letter-Numbers"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch4_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 5: Parallel and Intersecting Lines"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch5_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 6: Number Play"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch6_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 7: A Tale of Three Intersecting Lines"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch7_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 8: Working with Fractions"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch8_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 9: Geometric Twins"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch9_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 10: Operations with Integers"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch10_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 11: Finding Common Ground"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch11_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 12: Another Peek Beyond the Point"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch12_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 13: Connecting the Dots"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch13_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 14: Constructions and Tilings"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch14_mcq.json"
+};
+CONFIG_DATA[7]["math"]["Chapter 15: Finding the Unknown"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/7_math_ch15_mcq.json"
+};
 
-function buildCacheKey(type, cls, subject, chapter, version) {
-  return [type, cls, normalizeSubject(subject), chapter, version].join("|");
-}
+/* ================================================================
+   📌 CLASS 7 — SOCIAL
+   ================================================================ */
 
-function buildAvailabilityKey(type, cls, subject, chapter) {
-  return [type, cls, normalizeSubject(subject), chapter].join("|");
-}
+/* ================================================================
+   📌 CLASS 8 — SCIENCE
+   ================================================================ */
+   CONFIG_DATA[8]["science"]["Chapter 1: Exploring the Investigative World of Science"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class8_science_ch1_mcq.json"
+};
+   CONFIG_DATA[8]["science"]["Chapter 2: The Invisible Living World: Beyond Our Naked Eye"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/class8_sci_ch2_mcq.json"
+};
+   CONFIG_DATA[8]["science"]["Chapter 3: Health: The Ultimate Treasure"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch3_mcq.json"
+};
+   CONFIG_DATA[8]["science"]["Chapter 4: Electricity: Magnetic and Heating Effects"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch4_mcq.json"
+};
+   CONFIG_DATA[8]["science"]["Chapter 5: Exploring Forces"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch5_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 6: Pressure, Winds, Storms, and Cyclones"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch6_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 7: Particulate Nature of Matter"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch7_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 8: Nature of Matter: Elements, Compounds, and Mixtures"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch8_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 9: The Amazing World of Solutes, Solvents, and Solutions"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch9_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 10: Light: Mirrors and Lenses"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch10_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 11: Keeping Time with the Skies"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch11_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 12: How Nature Works in Harmony"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch12_mcq.json"
+};
+CONFIG_DATA[8]["science"]["Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_sci_ch13_mcq.json"
+};
 
-function clearContentCaches() {
-  mcqCache.clear();
-  pendingMCQLoads.clear();
-  mindMapCache.clear();
-  pendingMindMapLoads.clear();
-  unavailableByVersion.clear();
-}
+/* ================================================================
+   📌 CLASS 8 — MATH
+   ================================================================ */
+CONFIG_DATA[8]["math"]["Chapter 1: A Square and A Cube"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch1_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 2: Power Play"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch2_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 3: A Story of Numbers"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch3_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 4: Quadrilaterals"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch4_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 5: Number Play"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch5_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 6: We Distribute, Yet Things Multiply"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch6_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 7: Area"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch7_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 8: Fractions in Disguise"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch8_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 9: Proportional Reasoning-1"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch9_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 10: The Baudhayana-Pythagoras Theorem"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch10_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 11: Proportional Reasoning-2"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch11_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 12: Exploring Some Geometric Themes"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch12_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 13: Tales by Dots and Lines"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch13_mcq.json"
+};
+CONFIG_DATA[8]["math"]["Chapter 14: Algebra Play"] = {
+  mcq: "https://raw.githubusercontent.com/bachelorpulse/bachelorpulsedata/refs/heads/main/8_math_ch14_mcq.json"
+};
 
-async function getVersion(force = false) {
-  const now = Date.now();
-  const hasFreshCache = !force && versionState.value && (now - versionState.fetchedAt < VERSION_CACHE_TTL_MS);
-  if (hasFreshCache) return versionState.value;
-  if (versionState.pending) return versionState.pending;
+/* ================================================================
+   📌 CLASS 8 — SOCIAL
+   ================================================================ */
 
-  versionState.pending = (async () => {
-    try {
-      const res = await fetch(BASE_URL + VERSION_FILE, { cache: "no-store" });
-      if (!res.ok) throw new Error(`version fetch failed: ${res.status}`);
-      const data = await res.json();
-      const nextVersion = String(data?.version || VERSION_FALLBACK);
-      versionState.value = nextVersion;
-      versionState.fetchedAt = Date.now();
-      return nextVersion;
-    } catch (err) {
-      console.warn("[version] fallback:", err);
-      versionState.value = versionState.value || VERSION_FALLBACK;
-      versionState.fetchedAt = Date.now();
-      return versionState.value;
-    } finally {
-      versionState.pending = null;
-    }
-  })();
+/* ================================================================
+   📌 CLASS 9 — SCIENCE
+   ================================================================ */
 
-  return versionState.pending;
-}
+/* ================================================================
+   📌 CLASS 9 — MATH
+   ================================================================ */
 
-function buildMCQUrl(cls, subject, chapter, version) {
-  const code = normalizeSubject(subject);
-  return `${BASE_URL}${cls}_${code}_ch${chapter}_mcq.json?v=${encodeURIComponent(version)}`;
-}
+/* ================================================================
+   📌 CLASS 9 — SOCIAL
+   ================================================================ */
 
-function buildMindMapUrl(cls, subject, chapter, version) {
-  const code = normalizeSubject(subject);
-  return `${BASE_URL}${cls}_${code}_ch${chapter}_mm.jpg?v=${encodeURIComponent(version)}`;
-}
+/* ================================================================
+   📌 CLASS 10 — SCIENCE
+   ================================================================ */
 
-function ensureLoaderElement() {
-  let el = document.getElementById("loader");
-  if (!el) {
-    el = document.createElement("div");
-    el.id = "loader";
-    el.style.display = "none";
-    document.body.appendChild(el);
-  }
-  return el;
-}
+/* ================================================================
+   📌 CLASS 10 — MATH
+   ================================================================ */
 
-function showLoading(text) {
-  const el = ensureLoaderElement();
-  el.innerText = text;
-  el.style.display = "block";
-}
+/* ================================================================
+   📌 CLASS 10 — SOCIAL
+   ================================================================ */
 
-function hideLoading() {
-  ensureLoaderElement().style.display = "none";
-}
 
-function showError(msg) {
-  const el = ensureLoaderElement();
-  el.innerText = msg;
-  el.style.display = "block";
-}
-
-function showUpdateNotice() {
-  const el = document.getElementById("updateNotice");
-  if (!el) return;
-  el.innerText = "New content available 🔄 Click to refresh";
-  el.style.display = "block";
-}
-
-async function checkForUpdate() {
-  const newVersion = await getVersion(true);
-  if (currentVersion && newVersion !== currentVersion) {
-    clearContentCaches();
-    showUpdateNotice();
-  }
-  currentVersion = newVersion;
-}
-
-function startAutoUpdateChecks() {
-  checkForUpdate();
-  if (updatePollTimer) clearInterval(updatePollTimer);
-  updatePollTimer = setInterval(checkForUpdate, UPDATE_CHECK_INTERVAL_MS);
-}
-
-async function readBackupMCQ(chapterLabel) {
-  const res = await fetch(BACKUP_MCQ_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error("backup fetch failed");
-  return normalizeMCQData(await res.json(), chapterLabel);
-}
-
-async function loadMCQ(cls, subject, chapter, options = {}) {
-  const chapterNum = Number(chapter);
-  const chapterLabel = options.chapterLabel || "";
-  const silent = !!options.silent;
-  const allowBackup = options.allowBackup !== false;
-  let keepLoaderVisible = false;
-
-  if (!silent) showLoading("MCQ load ho rahe hain...");
-
-  try {
-    if (!Number.isFinite(chapterNum)) throw new Error("invalid chapter number");
-
-    const version = await getVersion();
-    currentVersion = version;
-
-    const cacheKey = buildCacheKey("mcq", cls, subject, chapterNum, version);
-    const availabilityKey = buildAvailabilityKey("mcq", cls, subject, chapterNum);
-
-    if (mcqCache.has(cacheKey)) return mcqCache.get(cacheKey);
-    if (pendingMCQLoads.has(cacheKey)) return pendingMCQLoads.get(cacheKey);
-    if (unavailableByVersion.get(availabilityKey) === version) {
-      throw new Error("MCQ not available for this chapter");
-    }
-
-    const request = (async () => {
-      try {
-        const url = buildMCQUrl(cls, subject, chapterNum, version);
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`MCQ fetch failed (${res.status})`);
-        const data = normalizeMCQData(await res.json(), chapterLabel);
-        if (!data.length) throw new Error("MCQ data empty");
-        mcqCache.set(cacheKey, data);
-        unavailableByVersion.delete(availabilityKey);
-        return data;
-      } catch (err) {
-        unavailableByVersion.set(availabilityKey, version);
-        if (!allowBackup) throw err;
-        const backupData = await readBackupMCQ(chapterLabel);
-        if (!backupData.length) throw err;
-        return backupData;
-      } finally {
-        pendingMCQLoads.delete(cacheKey);
-      }
-    })();
-
-    pendingMCQLoads.set(cacheKey, request);
-    return await request;
-  } catch (err) {
-    if (!silent) {
-      console.error("MCQ error:", err);
-      showError("MCQ load nahi ho paya");
-      keepLoaderVisible = true;
-    }
-    throw err;
-  } finally {
-    if (!silent && !keepLoaderVisible) hideLoading();
-  }
-}
-
-async function loadMindMap(cls, subject, chapter, options = {}) {
-  const chapterNum = Number(chapter);
-  const silent = !!options.silent;
-  let keepLoaderVisible = false;
-
-  if (!silent) showLoading("Mind Map load ho raha hai...");
-
-  try {
-    if (!Number.isFinite(chapterNum)) throw new Error("invalid chapter number");
-
-    const version = await getVersion();
-    currentVersion = version;
-
-    const cacheKey = buildCacheKey("mindmap", cls, subject, chapterNum, version);
-    const availabilityKey = buildAvailabilityKey("mindmap", cls, subject, chapterNum);
-
-    if (mindMapCache.has(cacheKey)) return mindMapCache.get(cacheKey);
-    if (pendingMindMapLoads.has(cacheKey)) return pendingMindMapLoads.get(cacheKey);
-    if (unavailableByVersion.get(availabilityKey) === version) {
-      throw new Error("mind map unavailable");
-    }
-
-    const url = buildMindMapUrl(cls, subject, chapterNum, version);
-    const request = new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = () => {
-        mindMapCache.set(cacheKey, url);
-        unavailableByVersion.delete(availabilityKey);
-        pendingMindMapLoads.delete(cacheKey);
-        resolve(url);
-      };
-      img.onerror = () => {
-        unavailableByVersion.set(availabilityKey, version);
-        pendingMindMapLoads.delete(cacheKey);
-        reject(new Error("Mind Map available nahi hai"));
-      };
-      img.src = url;
-    });
-
-    pendingMindMapLoads.set(cacheKey, request);
-    const resolvedUrl = await request;
-
-    if (!silent) {
-      const container = document.getElementById("mindmapContainer");
-      if (container) {
-        const img = new Image();
-        img.src = resolvedUrl;
-        img.alt = "Mind Map";
-        container.innerHTML = "";
-        container.appendChild(img);
-      }
-    }
-
-    return resolvedUrl;
-  } catch (err) {
-    if (!silent) {
-      console.error("Mind Map error:", err);
-      showError("Mind Map load fail");
-      keepLoaderVisible = true;
-    }
-    throw err;
-  } finally {
-    if (!silent && !keepLoaderVisible) hideLoading();
-  }
-}
-
-function renderMCQ(data, count) {
-  const pool = [...data].sort(() => Math.random() - 0.5);
-  const limit = Number.isFinite(Number(count)) ? Math.min(Number(count), pool.length) : pool.length;
-  startInlineQuiz(pool.slice(0, limit));
-}
-
-/*
-  URL lookup:
-  - mcq/mindmap are auto-generated from BASE_URL
-  - other types are optional overrides from CONFIG_DATA
-*/
+/* ── URL lookup (NO auto-generation — only CONFIG_DATA) ── */
 function getURL(classNum, subject, chapterStr, type) {
   const chMap = CONFIG_DATA[classNum]?.[subject]?.[chapterStr];
-  if (chMap?.[type]) return chMap[type];
-
-  const chapterNum = extractChapterNumber(chapterStr);
-  if (!Number.isFinite(chapterNum)) return null;
-
-  const version = currentVersion || versionState.value || VERSION_FALLBACK;
-  if (type === "mcq") return buildMCQUrl(classNum, subject, chapterNum, version);
-  if (type === "mindmap") return buildMindMapUrl(classNum, subject, chapterNum, version);
-  return null;
+  if (!chMap) return null;
+  return chMap[type] || null;
 }
-
-startAutoUpdateChecks();
 
 /* ================================================================
    STATE
@@ -2409,7 +2368,7 @@ startAutoUpdateChecks();
 let selClass=null, selSubject=null, selChapter=null, selCount=null, selMode=null;
 let selLearnType=null, urlViewerFrom=null;
 let questions=[], userAnswers=[], currentIdx=0;
-const subjectNames = { science:'Science ðŸ”¬', math:'Mathematics âž—', social:'Social Science ðŸŒ' };
+const subjectNames = { science:'Science 🔬', math:'Mathematics ➗', social:'Social Science 🌍' };
 const LABELS = ['A','B','C','D'];
 const ALL_KEY = '__ALL__';
 
@@ -2424,22 +2383,22 @@ function showScreen(id){
 
 function updateBreadcrumb(){
   const bc=document.getElementById('breadcrumb');
-  let p=['<span onclick="goHome()" style="cursor:pointer">ðŸ  Home</span>'];
-  if(selClass)   p.push(`<span class="sep">â€º</span><span>Class ${selClass}</span>`);
-  if(selSubject) p.push(`<span class="sep">â€º</span><span>${subjectNames[selSubject]}</span>`);
-  if(selChapter) p.push(`<span class="sep">â€º</span><span>${selChapter===ALL_KEY?'All Chapters':selChapter}</span>`);
+  let p=['<span onclick="goHome()" style="cursor:pointer">🏠 Home</span>'];
+  if(selClass)   p.push(`<span class="sep">›</span><span>Class ${selClass}</span>`);
+  if(selSubject) p.push(`<span class="sep">›</span><span>${subjectNames[selSubject]}</span>`);
+  if(selChapter) p.push(`<span class="sep">›</span><span>${selChapter===ALL_KEY?'All Chapters':selChapter}</span>`);
   if(selMode){
     const modeLabel = selMode==='mcq'?'MCQ':selMode==='solution'?'Solution':'Learn';
-    p.push(`<span class="sep">â€º</span><span>${modeLabel}</span>`);
+    p.push(`<span class="sep">›</span><span>${modeLabel}</span>`);
   }
-  if(selLearnType) p.push(`<span class="sep">â€º</span><span>${selLearnType==='shortnote'?'Short Note':'Mind Map'}</span>`);
-  if(selCount)   p.push(`<span class="sep">â€º</span><span>${selCount} MCQ</span>`);
+  if(selLearnType) p.push(`<span class="sep">›</span><span>${selLearnType==='shortnote'?'Short Note':'Mind Map'}</span>`);
+  if(selCount)   p.push(`<span class="sep">›</span><span>${selCount} MCQ</span>`);
   bc.innerHTML=p.join(' ');
 }
 
 function selectClass(c){
   selClass=c; selSubject=null; selChapter=null; selCount=null; selMode=null; selLearnType=null;
-  document.getElementById('subjectTitle').textContent=`ðŸ“˜ Class ${c} â€” Select Subject`;
+  document.getElementById('subjectTitle').textContent=`📘 Class ${c} — Select Subject`;
   updateBreadcrumb(); showScreen('subject');
 }
 
@@ -2454,18 +2413,13 @@ function selectSubject(s){
 function buildChapterScreen(){
   const chapterList = CHAPTERS[selClass][selSubject];
   document.getElementById('chapterTitle').textContent =
-    `ðŸ“‘ Class ${selClass} ${subjectNames[selSubject]} â€” Select Chapter`;
-
-  /* Update Practice All banner subtitle with chapter count */
-  const subjectLabel = subjectNames[selSubject].replace(/[ðŸ”¬âž—ðŸŒ]/g,'').trim();
-  document.getElementById('pabSubText').textContent =
-    `Attempt every MCQ from all ${chapterList.length} chapters of ${subjectLabel} in one go!`;
+    `📑 Class ${selClass} ${subjectNames[selSubject]} — Select Chapter`;
 
   const grid = document.getElementById('chapterGrid');
   grid.innerHTML = '';
 
   if(chapterList.length === 0){
-    grid.innerHTML = `<div class="empty-quiz"><div class="big">ðŸš§</div>
+    grid.innerHTML = `<div class="empty-quiz"><div class="big">🚧</div>
       <p>No chapters found for <strong>Class ${selClass} ${subjectNames[selSubject]}</strong>.</p></div>`;
     return;
   }
@@ -2494,75 +2448,8 @@ function buildChapterScreen(){
 function selectChapter(ch){
   selChapter = ch; selCount = null; selMode = null; selLearnType = null;
   const label = ch.replace(/^Chapter\s*\d+:\s*/i, '');
-  document.getElementById('modeTitle').textContent = `âš¡ ${label} â€” What do you want to do?`;
+  document.getElementById('modeTitle').textContent = `⚡ ${label} — What do you want to do?`;
   updateBreadcrumb(); showScreen('mode');
-}
-
-/* ================================================================
-   PRACTICE ALL SUBJECT â€” fetch every chapter's MCQs at once
-   ================================================================ */
-function practiceAllSubject(){
-  selChapter = ALL_KEY;
-  selMode    = 'mcq';
-  selCount   = null;
-  updateBreadcrumb();
-
-  const chapterList = CHAPTERS[selClass][selSubject];
-  const subjectLabel = subjectNames[selSubject].replace(/[ðŸ”¬âž—ðŸŒ]/g,'').trim();
-
-  const qs = document.getElementById('quizScreen');
-
-  if(chapterList.length === 0){
-    qs.innerHTML = `<div class="coming-soon">
-      <div style="font-size:4rem;margin-bottom:16px">ðŸš€</div>
-      <h2 style="font-size:1.6rem">Coming Soon!</h2>
-      <p style="color:var(--muted);margin-top:10px;font-size:.9rem">
-        No chapters available yet for <strong>${subjectLabel}</strong>.
-      </p>
-      <br>
-      <button class="qbtn qbtn-sec" onclick="goBack('chapter')" style="margin:auto;display:flex;">â† Go Back</button>
-    </div>`;
-    showScreen('quiz');
-    return;
-  }
-
-  qs.innerHTML = `<div class="url-loading">
-    <span class="spin">â³</span>
-    <p>Loading all questions from ${chapterList.length} chapter${chapterList.length>1?'s':''}â€¦</p>
-  </div>`;
-  showScreen('quiz');
-
-  /* Fetch all chapter JSONs in parallel from dynamic BASE_URL, merge & shuffle */
-  Promise.all(
-    chapterList.map(ch => {
-      const chapterNum = extractChapterNumber(ch);
-      if (!Number.isFinite(chapterNum)) return Promise.resolve([]);
-      return loadMCQ(selClass, selSubject, chapterNum, {
-        silent: true,
-        allowBackup: false,
-        chapterLabel: ch.replace(/^Chapter\s*\d+:\s*/i,'')
-      })
-        .then(data => data.map(item => ({
-          ...item,
-          _chapter: ch.replace(/^Chapter\s*\d+:\s*/i,'')
-        })))
-        .catch(() => [])
-    })
-  ).then(allArrays => {
-    const merged = allArrays.flat().sort(() => Math.random() - 0.5);
-    if(merged.length === 0){
-      qs.innerHTML = `<div class="url-error">
-        <div class="big">âš ï¸</div>
-        <p>Could not load questions. Check your network and try again.</p>
-        <br>
-        <button class="qbtn qbtn-sec" onclick="goBack('chapter')" style="margin:auto;display:flex;">â† Go Back</button>
-      </div>`;
-      return;
-    }
-    /* selCount = total so startInlineQuiz takes all */
-    selCount = merged.length;
-    startPollMode(merged);
-  });
 }
 
 /* ================================================================
@@ -2574,13 +2461,13 @@ function selectMode(mode){
 
   if(mode === 'mcq'){
     const label = selChapter.replace(/^Chapter\s*\d+:\s*/i, '');
-    document.getElementById('countTitle').textContent = `ðŸŽ¯ ${label} â€” How Many Questions?`;
+    document.getElementById('countTitle').textContent = `🎯 ${label} — How Many Questions?`;
     showScreen('count');
   } else if(mode === 'solution'){
     fetchChapterContent('solution');
   } else if(mode === 'learn'){
     const label = selChapter.replace(/^Chapter\s*\d+:\s*/i, '');
-    document.getElementById('learnTitle').textContent = `ðŸ“– ${label} â€” Choose Learning Style`;
+    document.getElementById('learnTitle').textContent = `📖 ${label} — Choose Learning Style`;
     showScreen('learn');
   }
 }
@@ -2605,49 +2492,38 @@ function selectCount(n){
 
 /* ================================================================
    fetchChapterContent(type)
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   Central dispatcher for chapter content.
+   ─────────────────────────────────────────────────────────────────
+   Central dispatcher — only URLs from CONFIG_DATA are used.
+   If URL is not found → shows "Coming Soon".
    type: 'mcq' | 'solution' | 'shortnote' | 'mindmap'
    ================================================================ */
 function fetchChapterContent(type){
   const chapterLabel = selChapter.replace(/^Chapter\s*\d+:\s*/i, '');
-  const chapterNum = extractChapterNumber(selChapter);
-
-  if(type === 'mcq'){
-    fetchMCQFromURL(null, selCount);
-    return;
-  }
-
-  if(type === 'mindmap'){
-    if (!Number.isFinite(chapterNum)) {
-      showComingSoon(type, chapterLabel);
-      return;
-    }
-    loadMindMap(selClass, selSubject, chapterNum, { silent: true })
-      .then(url => openUrlViewer(url, 'ðŸ§  Mind Map', 'learn', chapterLabel))
-      .catch(() => showComingSoon(type, chapterLabel));
-    return;
-  }
-
   const url = getURL(selClass, selSubject, selChapter, type);
+
+  /* ── If URL is not in CONFIG_DATA ── */
   if(!url){
     showComingSoon(type, chapterLabel);
     return;
   }
 
-  if(type === 'solution'){
-    openUrlViewer(url, 'âœ… Solutions', 'mode', chapterLabel);
+  if(type === 'mcq'){
+    fetchMCQFromURL(url, selCount);
+  } else if(type === 'solution'){
+    openUrlViewer(url, '✅ Solutions', 'mode', chapterLabel);
   } else if(type === 'shortnote'){
-    openUrlViewer(url, 'ðŸ“‹ Short Notes', 'learn', chapterLabel);
+    openUrlViewer(url, '📋 Short Notes', 'learn', chapterLabel);
+  } else if(type === 'mindmap'){
+    openUrlViewer(url, '🧠 Mind Map', 'learn', chapterLabel);
   }
 }
 
 /* ================================================================
-   COMING SOON â€” clear message when URL is not mapped
+   COMING SOON — clear message when URL is not mapped
    ================================================================ */
 function showComingSoon(type, chapterLabel){
   const comingSoonHtml = `<div class="coming-soon">
-    <div class="big" style="font-size:5rem;margin-bottom:18px;">ðŸš€</div>
+    <div class="big" style="font-size:5rem;margin-bottom:18px;">🚀</div>
     <h2 style="font-size:2rem;letter-spacing:.02em;">Coming Soon</h2>
     <p style="font-size:.95rem;margin-top:10px;color:var(--muted)">We're working hard to bring this to you!</p>
   </div>`;
@@ -2655,7 +2531,7 @@ function showComingSoon(type, chapterLabel){
   /* Show in quiz screen for MCQ */
   if(type === 'mcq'){
     const qs = document.getElementById('quizScreen');
-    qs.innerHTML = comingSoonHtml + `<div style="text-align:center;margin-top:8px;"><button class="qbtn qbtn-sec" onclick="goBack('count')" style="margin:auto;display:inline-flex;">â† Go Back</button></div>`;
+    qs.innerHTML = comingSoonHtml + `<div style="text-align:center;margin-top:8px;"><button class="qbtn qbtn-sec" onclick="goBack('count')" style="margin:auto;display:inline-flex;">← Go Back</button></div>`;
     showScreen('quiz');
   } else {
     /* Show in urlviewer for Solution / ShortNote / MindMap */
@@ -2671,42 +2547,46 @@ function showComingSoon(type, chapterLabel){
    ================================================================ */
 function fetchMCQFromURL(url, count){
   const qs = document.getElementById('quizScreen');
-  const chapterNum = extractChapterNumber(selChapter);
-  const safeCount = Number.isFinite(Number(count)) ? Number(count) : 'all';
-
   qs.innerHTML = `<div class="url-loading">
-    <span class="spin">â³</span>
-    <p>Loading ${safeCount} questions...</p>
+    <span class="spin">⏳</span>
+    <p>Loading ${count} questions...</p>
   </div>`;
   showScreen('quiz');
 
-  if (!Number.isFinite(chapterNum)) {
-    qs.innerHTML = `<div class="url-error">
-      <div class="big">âš ï¸</div>
-      <p>Chapter number could not be detected.</p>
-      <br>
-      <button class="qbtn qbtn-sec" onclick="goBack('count')" style="margin:auto;display:flex;">â† Go Back</button>
-    </div>`;
-    return;
-  }
+  fetch(url)
+    .then(r => {
+      if(!r.ok) throw new Error(`HTTP ${r.status} — file not found on server`);
+      return r.json();
+    })
+    .then(data => {
+      if(!Array.isArray(data) || data.length === 0)
+        throw new Error('Empty or invalid question data in JSON file');
 
-  loadMCQ(selClass, selSubject, chapterNum, {
-    silent: true,
-    chapterLabel: selChapter.replace(/^Chapter\s*\d+:\s*/i, '')
-  })
-    .then(data => renderMCQ(data, count))
+      /* ── Normalize both formats:
+           Short : { q, o, a, sol }
+           Long  : { question, options, correct }       ── */
+      const normalized = data.map(item => ({
+        question : item.question || item.q  || '',
+        options  : item.options  || item.o  || [],
+        correct  : item.correct  !== undefined ? item.correct
+                 : item.a        !== undefined ? item.a : 0,
+        sol      : item.sol || item.solution || ''
+      }));
+
+      const pool = [...normalized].sort(() => Math.random() - 0.5);
+      startInlineQuiz(pool.slice(0, Math.min(count, pool.length)));
+    })
     .catch(err => {
-      const generatedUrl = getURL(selClass, selSubject, selChapter, 'mcq');
       qs.innerHTML = `<div class="url-error">
-        <div class="big">âš ï¸</div>
+        <div class="big">⚠️</div>
         <p>Questions could not be loaded.<br>
         <small style="color:var(--muted)">${err.message}</small></p>
         <p style="margin-top:10px;font-size:.82rem;">
-          Auto-generated URL:<br>
-          <code style="word-break:break-all;color:var(--accent)">${generatedUrl || 'N/A'}</code>
+          Please check that this URL is correct and the file exists:<br>
+          <code style="word-break:break-all;color:var(--accent)">${url}</code>
         </p>
         <br>
-        <button class="qbtn qbtn-sec" onclick="goBack('count')" style="margin:auto;display:flex;">â† Go Back</button>
+        <button class="qbtn qbtn-sec" onclick="goBack('count')" style="margin:auto;display:flex;">← Go Back</button>
       </div>`;
     });
 }
@@ -2716,13 +2596,13 @@ function fetchMCQFromURL(url, count){
    ================================================================ */
 const GDRIVE_PLACEHOLDER = 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_HERE';
 
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ─────────────────────────────────────────────────────────────
    toGDriveViewUrl()
-   Converts ANY Google Drive URL â†’ the only format that works
+   Converts ANY Google Drive URL → the only format that works
    inside an <img> tag without CORS errors:
      https://drive.google.com/uc?export=view&id=FILE_ID
    NO canvas. NO Panzoom. NO crossorigin. Just a plain <img>.
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+───────────────────────────────────────────────────────────── */
 function toGDriveViewUrl(url) {
   if (!url) return url;
   if (/drive\.google\.com\/uc\?export=view/.test(url)) return url;
@@ -2738,38 +2618,40 @@ function openUrlViewer(url, title, backTo, chapterLabel){
   urlViewerFrom = backTo;
   const container = document.getElementById('urlViewerContainer');
 
-  // â”€â”€ Detect content type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Detect content type ──────────────────────────────────────
   const isImage    = /\.(png|jpg|jpeg|gif|webp|svg)(\?.*)?$/i.test(url);
   const isGDrive   = /drive\.google\.com/.test(url);
-  const isMindMap  = title.toLowerCase().includes('mind map') || isImage || isGDrive;
+  const isGHRaw    = /raw\.githubusercontent\.com/.test(url);
+  const isMindMap  = title.toLowerCase().includes('mind map') || isImage || isGDrive || isGHRaw;
   const isSolution  = title.toLowerCase().includes('solution');
   const isShortNote = title.toLowerCase().includes('short note');
 
   let contentHtml = '';
 
-  // â”€â”€ Resolve URLs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Resolve URLs ─────────────────────────────────────────────
   const chCfg        = CONFIG_DATA[selClass]?.[selSubject]?.[selChapter] || {};
-  // Drive links get converted to export=view, other image URLs are used directly
-  const mmViewUrl    = isGDrive ? toGDriveViewUrl(url) : url;
+  // GitHub raw links are used directly; Drive links get converted to export=view
+  const mmViewUrl    = isGHRaw ? url : toGDriveViewUrl(url);
   const mmDownloadUrl = chCfg.mindmap_download
     || (isGDrive ? mmViewUrl.replace('export=view', 'export=download') : url);
 
   if(isMindMap){
-    /* â”€â”€ MIND MAP VIEWER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       Strategy: plain <img> + click/pinch zoom.
-       â€” height:80vh scroll container lets students pan HD maps
-       â€” click toggles width 100% â†” 250% on mobile/desktop
-       â€” no canvas or external zoom library required
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── MIND MAP VIEWER ─────────────────────────────────────────
+       Strategy: <img> with crossorigin + click-toggle zoom
+       — crossorigin="anonymous": safe for GitHub raw URLs
+       — height:80vh scroll container: lets students pan the HD map
+       — click toggles width 100% ↔ 250% for deep zoom on mobile
+       — NO canvas, NO Panzoom libraries needed
+    ──────────────────────────────────────────────────────────── */
     contentHtml = `
       <div class="mindmap-wrap" id="mindmapWrap">
         <div class="mm-skeleton" id="mmSkeleton">
-          <span style="animation:spin 1s linear infinite;display:inline-block">â³</span>
-          Loading Mind Mapâ€¦
+          <span style="animation:spin 1s linear infinite;display:inline-block">⏳</span>
+          Loading Mind Map…
         </div>
 
         <div class="mm-img-error" id="mmImgError">
-          <span class="err-icon">ðŸ–¼ï¸</span>
+          <span class="err-icon">🖼️</span>
           <h3>Mind Map Could Not Load</h3>
           <p>Check your internet connection or try again.</p>
         </div>
@@ -2781,9 +2663,11 @@ function openUrlViewer(url, title, backTo, chapterLabel){
                  -webkit-overflow-scrolling:touch;border-radius:12px;
                  background:var(--bg);touch-action:pan-x pan-y pinch-zoom;
                  -ms-touch-action:pan-x pan-y pinch-zoom;">
-          <!-- Click toggles width 100%â†”250% for deep zoom on any device -->
+          <!-- crossorigin: safe for GitHub raw; needed for high-quality rendering
+               Click toggles width 100%↔250% for deep zoom on any device -->
           <img id="mindmapImg"
             src="${mmViewUrl}"
+            crossorigin="anonymous"
             alt="${chapterLabel} Mind Map"
             style="display:block;width:100%;height:auto;cursor:zoom-in;
                    transition:width 0.3s ease;
@@ -2808,14 +2692,14 @@ function openUrlViewer(url, title, backTo, chapterLabel){
         </div>
 
         <div class="mindmap-zoom-hint" id="mmZoomHint" style="display:none;">
-          ðŸ” Tap image to zoom in &nbsp;Â·&nbsp; Tap again to zoom out
+          🔍 Tap image to zoom in &nbsp;·&nbsp; Tap again to zoom out
         </div>
       </div>
 
       <div class="mm-dual-action">
         <button class="mm-action-btn mm-zoom-btn"
-          onclick="openLightbox('${mmViewUrl}', '${chapterLabel} â€” Mind Map')">
-          <span class="mm-btn-icon">ðŸ”</span>
+          onclick="openLightbox('${mmViewUrl}', '${chapterLabel} — Mind Map')">
+          <span class="mm-btn-icon">🔍</span>
           <div class="mm-btn-text">
             <div class="mm-btn-label">Full Screen Zoom</div>
             <div class="mm-btn-sub">HD in-app viewer</div>
@@ -2823,42 +2707,42 @@ function openUrlViewer(url, title, backTo, chapterLabel){
         </button>
       </div>`;
 
-    // ðŸ”¥ Credit student with study activity for opening a Mind Map
+    // 🔥 Credit student with study activity for opening a Mind Map
     StrikeManager.updateStrike();
 
   } else {
-    // â”€â”€ PDF / iframe (Solution or Short Note)
+    // ── PDF / iframe (Solution or Short Note)
     contentHtml = `<iframe class="url-content-frame" src="${url}"
-      title="${title} â€“ ${chapterLabel}"
+      title="${title} – ${chapterLabel}"
       allow="fullscreen"
     ></iframe>`;
   }
 
-  // â”€â”€ Header: show "Open in New Tab" only for non-mind-map content
+  // ── Header: show "Open in New Tab" only for non-mind-map content
   const headerRight = isMindMap
-    ? `<span style="font-size:.75rem;color:var(--muted);padding:5px 12px;">ðŸ” Click image to zoom</span>`
-    : `<a class="url-viewer-open" href="${url}" target="_blank" rel="noopener">â¬¡ Open in New Tab</a>`;
+    ? `<span style="font-size:.75rem;color:var(--muted);padding:5px 12px;">🔍 Click image to zoom</span>`
+    : `<a class="url-viewer-open" href="${url}" target="_blank" rel="noopener">⬡ Open in New Tab</a>`;
 
-  // â”€â”€ ACTION HUB for Solution & Short Note
+  // ── ACTION HUB for Solution & Short Note
   let actionHub = '';
   if(isSolution || isShortNote){
-    StrikeManager.updateStrike(); // ðŸ”¥ Student opened study content â€” credit activity
+    StrikeManager.updateStrike(); // 🔥 Student opened study content — credit activity
     const downloadUrl = GDRIVE_PLACEHOLDER;
     actionHub = `<div class="action-hub">
       <a class="action-btn action-btn-download"
          href="${downloadUrl}" target="_blank" rel="noopener">
-        â¬‡ï¸ Download PDF
+        ⬇️ Download PDF
       </a>`;
     if(isShortNote){
       actionHub += `<button class="action-btn action-btn-copy" id="copyNoteBtn"
         onclick="copyShortNoteText('${url}')">
-        ðŸ“‹ Copy Text
+        📋 Copy Text
       </button>`;
     }
     actionHub += `</div>`;
   }
 
-  // â”€â”€ Progress tracker
+  // ── Progress tracker
   const storageKey = `bp_done_${selClass}_${selSubject}_${encodeURIComponent(selChapter)}`;
   const isDone = localStorage.getItem(storageKey) === '1';
   const progressHtml = `
@@ -2866,20 +2750,20 @@ function openUrlViewer(url, title, backTo, chapterLabel){
       <div class="chapter-complete-left">
         <div class="complete-checkbox ${isDone ? 'done' : ''}" id="completeCheckbox"
           onclick="toggleChapterDone('${storageKey}')">
-          ${isDone ? 'âœ…' : ''}
+          ${isDone ? '✅' : ''}
         </div>
         <div>
           <div class="complete-text">Mark Chapter as Completed</div>
           <div class="complete-sub">Your progress is saved on this device</div>
         </div>
       </div>
-      <div class="complete-badge ${isDone ? 'visible' : ''}" id="completeBadge">ðŸ† Done!</div>
+      <div class="complete-badge ${isDone ? 'visible' : ''}" id="completeBadge">🏆 Done!</div>
     </div>`;
 
   container.innerHTML = `
     <div class="url-viewer-wrap">
       <div class="url-viewer-header">
-        <div class="url-viewer-title">${title} â€” ${chapterLabel}</div>
+        <div class="url-viewer-title">${title} — ${chapterLabel}</div>
         <div style="display:flex;align-items:center;gap:8px;">
           <button class="reading-toggle" onclick="toggleReadingMode()">
             <span id="readingToggleLabel">Focus Mode</span>
@@ -2899,11 +2783,11 @@ function openUrlViewer(url, title, backTo, chapterLabel){
   showScreen('urlviewer');
 }
 
-/* â”€â”€ MIND MAP CLICK-TOGGLE ZOOM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ── MIND MAP CLICK-TOGGLE ZOOM ──────────────────────────────────
    Toggles the preview image between normal (100%) and
    deep-zoom (250%) with a smooth CSS transition.
    The scroll wrapper's overflow:auto handles panning at 250%.
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+────────────────────────────────────────────────────────────── */
 function toggleMmZoom(img) {
   const isZoomed = img.dataset.zoomed === '1';
   if (!isZoomed) {
@@ -2911,20 +2795,20 @@ function toggleMmZoom(img) {
     img.style.cursor = 'zoom-out';
     img.dataset.zoomed = '1';
     const hint = document.getElementById('mmZoomHint');
-    if (hint) hint.innerHTML = 'ðŸ” Zoomed in &nbsp;Â·&nbsp; Tap again to zoom out &nbsp;Â·&nbsp; Scroll/drag to pan';
+    if (hint) hint.innerHTML = '🔍 Zoomed in &nbsp;·&nbsp; Tap again to zoom out &nbsp;·&nbsp; Scroll/drag to pan';
   } else {
     img.style.width  = '100%';
     img.style.cursor = 'zoom-in';
     img.dataset.zoomed = '0';
     const hint = document.getElementById('mmZoomHint');
-    if (hint) hint.innerHTML = 'ðŸ” Tap image to zoom in &nbsp;Â·&nbsp; Tap again to zoom out';
+    if (hint) hint.innerHTML = '🔍 Tap image to zoom in &nbsp;·&nbsp; Tap again to zoom out';
   }
 }
 
-/* â”€â”€ MIND MAP PINCH-ZOOM (inline, inside mmScrollWrap) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ── MIND MAP PINCH-ZOOM (inline, inside mmScrollWrap) ──────────
    Handles two-finger pinch on the inline mind map even when
    user-scalable=no is set in viewport meta.
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+────────────────────────────────────────────────────────────── */
 (function () {
   let mmInitDist = 0, mmInitWidth = 0, mmPinching = false;
 
@@ -2964,12 +2848,12 @@ function toggleMmZoom(img) {
   });
 })();
 
-/* â”€â”€ LIGHTBOX ZOOM CONTROLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ── LIGHTBOX ZOOM CONTROLS ─────────────────────────────────────
    lbScale: current zoom level (1 = 100%)
-   + / â€“ buttons: step zoom for desktop
+   + / – buttons: step zoom for desktop
    Native pinch: two-finger gesture on mobile (touchstart/move)
    All zoom applies via CSS transform on the image directly.
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+────────────────────────────────────────────────────────────── */
 let lbScale = 1;
 
 function lbZoom(factor) {
@@ -2993,7 +2877,7 @@ function lbZoomReset() {
   if (scroll) { scroll.scrollLeft = 0; scroll.scrollTop = 0; }
 }
 
-/* Native pinch-to-zoom handler for mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Native pinch-to-zoom handler for mobile ──────────────────── */
 (function () {
   let initDist = 0, initScale = 1, lbPinching = false;
 
@@ -3033,20 +2917,20 @@ function lbZoomReset() {
   });
 })();
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   ZOOM MODAL â€” open / close
-   â€¢ Pre-decodes image via new Image() before showing, so the
+/* ══════════════════════════════════════════════════════════════
+   ZOOM MODAL — open / close
+   • Pre-decodes image via new Image() before showing, so the
      browser never paints a blurry half-loaded frame
-   â€¢ Double rAF ensures opacity transition fires after first paint
-   â€¢ Clears src on close so GPU memory is released
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   • Double rAF ensures opacity transition fires after first paint
+   • Clears src on close so GPU memory is released
+══════════════════════════════════════════════════════════════ */
 function openLightbox(src, label) {
   const overlay = document.getElementById('lightboxOverlay');
   const img     = document.getElementById('lightboxImg');
   const lbl     = document.getElementById('lightboxLabel');
   const scroll  = document.getElementById('lightboxScroll');
 
-  /* Hard-reset image to invisible â€” prevents stuck mid-transition opacity */
+  /* Hard-reset image to invisible — prevents stuck mid-transition opacity */
   img.style.transition = 'none';
   img.style.opacity = '0';
   img.src = '';
@@ -3094,7 +2978,7 @@ function openLightbox(src, label) {
   };
   loader.src = src;
 
-  /* â”€â”€ Desktop drag-to-pan â”€â”€ */
+  /* ── Desktop drag-to-pan ── */
   let isDragging = false, startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
   function onMouseDown(e) {
     if (e.button !== 0) return;
@@ -3154,7 +3038,7 @@ function closeLightbox() {
 }
 
 function closeLightboxOutside(e) {
-  /* Only close when clicking the dark backdrop or scroll â€” not the image */
+  /* Only close when clicking the dark backdrop or scroll — not the image */
   if (e.target === document.getElementById('lightboxOverlay') ||
       e.target === document.getElementById('lightboxScroll')) {
     closeLightbox();
@@ -3165,11 +3049,11 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeLightbox(); closeModal(); if(typeof BookmarkSystem!=='undefined') BookmarkSystem.close(); }
 });
 
-/* â”€â”€ COPY SHORT NOTE TEXT â”€â”€ */
+/* ── COPY SHORT NOTE TEXT ── */
 async function copyShortNoteText(url){
   const btn = document.getElementById('copyNoteBtn');
   if(!btn) return;
-  btn.textContent = 'â³ Fetching...';
+  btn.textContent = '⏳ Fetching...';
   btn.disabled = true;
   try {
     const r = await fetch(url);
@@ -3177,21 +3061,21 @@ async function copyShortNoteText(url){
     // Strip HTML tags if it's an HTML doc, else copy raw
     const clean = text.replace(/<[^>]+>/g, ' ').replace(/\s{2,}/g, '\n').trim();
     await navigator.clipboard.writeText(clean);
-    btn.innerHTML = 'âœ… Copied!';
+    btn.innerHTML = '✅ Copied!';
     btn.classList.add('copied');
     setTimeout(() => {
-      btn.innerHTML = 'ðŸ“‹ Copy Text';
+      btn.innerHTML = '📋 Copy Text';
       btn.classList.remove('copied');
       btn.disabled = false;
     }, 2500);
   } catch(err) {
-    btn.innerHTML = 'âŒ Failed';
+    btn.innerHTML = '❌ Failed';
     btn.disabled = false;
-    setTimeout(() => { btn.innerHTML = 'ðŸ“‹ Copy Text'; }, 2000);
+    setTimeout(() => { btn.innerHTML = '📋 Copy Text'; }, 2000);
   }
 }
 
-/* â”€â”€ CHAPTER COMPLETION TRACKER â”€â”€ */
+/* ── CHAPTER COMPLETION TRACKER ── */
 function toggleChapterDone(key){
   const cb = document.getElementById('completeCheckbox');
   const badge = document.getElementById('completeBadge');
@@ -3204,13 +3088,13 @@ function toggleChapterDone(key){
   } else {
     localStorage.setItem(key, '1');
     cb.classList.add('done');
-    cb.innerHTML = 'âœ…';
+    cb.innerHTML = '✅';
     badge.classList.add('visible');
-    StrikeManager.recordActivity(); // ðŸ”¥ Trigger strike update
+    StrikeManager.recordActivity(); // 🔥 Trigger strike update
   }
 }
 
-/* â”€â”€ READING MODE â”€â”€ */
+/* ── READING MODE ── */
 function toggleReadingMode(){
   const body = document.body;
   const label = document.getElementById('readingToggleLabel');
@@ -3240,226 +3124,18 @@ function goHome(){selClass=null;selSubject=null;selChapter=null;selCount=null;se
 /* ================================================================
    INLINE QUIZ ENGINE
    ================================================================ */
-/* ================================================================
-   POLL MODE â€” one question at a time, instant YouTube-poll feedback
-   Done anytime â†’ result based only on attempted questions
-   ================================================================ */
-let pollIdx = 0; // current question index in poll mode
-
-function startPollMode(pool){
-  questions   = pool;
-  userAnswers = new Array(questions.length).fill(null);
-  pollIdx     = 0;
-  StrikeManager.updateStrike();
-  if(typeof PerfDash !== 'undefined') PerfDash.quizStart();
-  showScreen('quiz');
-  pollRender(pollIdx);
-}
-
-/* â”€â”€ Build and show one question card â”€â”€ */
-function pollRender(idx){
-  const q     = questions[idx];
-  const total = questions.length;
-  const label = selChapter === ALL_KEY ? 'All Chapters' : selChapter.replace(/^Chapter\s*\d+:\s*/i,'');
-
-  /* attempted count for progress */
-  const attempted = userAnswers.filter(a => a !== null).length;
-  const pct = Math.round(attempted / total * 100);
-
-  /* live score */
-  let scoreC = 0, scoreW = 0;
-  userAnswers.forEach((a,i) => {
-    if(a === null) return;
-    if(a === questions[i].correct) scoreC++; else scoreW++;
-  });
-
-  /* already answered this Q? */
-  const alreadyAns = userAnswers[idx] !== null;
-  const chosen     = userAnswers[idx];
-  const correct    = q.correct;
-
-  /* options html */
-  const optsHtml = q.options.map((opt, oi) => {
-    let cls = 'poll-opt';
-    let barW = '0%', iconHtml = '';
-    if(alreadyAns){
-      cls += ' locked';
-      if(oi === correct)            { cls += ' opt-correct'; barW = '100%'; iconHtml = 'âœ…'; }
-      else if(oi === chosen)        { cls += ' opt-wrong';   barW = '55%';  iconHtml = 'âŒ'; }
-      else                          { cls += ' opt-neutral'; }
-      if(oi === chosen) cls += ' opt-chosen';
-    }
-    return `<div class="${cls}" onclick="pollAnswer(${idx},${oi})">
-      <div class="poll-opt-bar" style="width:${barW}"></div>
-      <div class="poll-opt-lbl">${LABELS[oi]}</div>
-      <div class="poll-opt-content">
-        <span class="poll-opt-txt">${opt}</span>
-      </div>
-      <span class="poll-opt-icon">${iconHtml}</span>
-    </div>`;
-  }).join('');
-
-  /* feedback */
-  let fbHtml = '';
-  if(alreadyAns){
-    const isRight = chosen === correct;
-    fbHtml = isRight
-      ? `<div class="poll-feedback show fb-correct">ðŸŽ‰ Correct! Well done!</div>`
-      : `<div class="poll-feedback show fb-wrong">âŒ Oops! Correct answer: ${LABELS[correct]}) ${q.options[correct]}</div>`;
-  }
-
-  /* explanation */
-  const hasSol = (q.sol || '').toString().trim().length > 0;
-  const explHtml = (alreadyAns && hasSol)
-    ? `<button class="poll-expl-btn show" id="poll-expl-btn" onclick="pollToggleExpl()">ðŸ’¡ View Explanation</button>
-       <div class="poll-expl-box" id="poll-expl-box">
-         <div class="poll-expl-label">ðŸ“– Explanation</div>
-         <div class="poll-expl-text">${q.sol}</div>
-       </div>`
-    : '';
-
-  /* bookmark state */
-  const isBm = typeof BookmarkSystem !== 'undefined' && BookmarkSystem.isSaved(q);
-  const bmCls = isBm ? 'poll-bm-btn saved' : 'poll-bm-btn';
-  const bmTxt = isBm ? 'ðŸ”– Bookmarked' : 'ðŸ”– Bookmark';
-
-  /* card border class */
-  const cardCls = alreadyAns
-    ? (chosen === correct ? 'poll-qcard answered-correct' : 'poll-qcard answered-wrong')
-    : 'poll-qcard';
-
-  /* next / done button */
-  const isLast = idx === total - 1;
-  const nextBtnHtml = isLast
-    ? `<button class="poll-done-btn" onclick="pollFinish()">ðŸ Done â€” See Results</button>`
-    : `<button class="poll-next-btn" id="pollNextBtn" onclick="pollNext()">Next â†’</button>`;
-
-  document.getElementById('quizScreen').innerHTML = `
-  <div class="poll-shell">
-
-    <!-- top bar -->
-    <div class="poll-topbar">
-      <div class="poll-topbar-left">
-        <div class="poll-topbar-label">âš¡ ${label}</div>
-        <div class="poll-progress" style="width:100%;max-width:none">
-          <div class="poll-progress-fill" style="width:${pct}%"></div>
-        </div>
-      </div>
-      <div class="poll-score-live">
-        <span class="poll-sc poll-sc-c">âœ… ${scoreC}</span>
-        <span class="poll-sc poll-sc-w">âŒ ${scoreW}</span>
-      </div>
-    </div>
-
-    <!-- question card -->
-    <div class="${cardCls}" id="pollCard">
-      <div class="poll-q-meta">
-        <span class="poll-q-num">Q${idx+1} / ${total}</span>
-        <button class="${bmCls}" id="pollBmBtn" onclick="pollToggleBm()">${bmTxt}</button>
-      </div>
-      <div class="poll-q-text">${q.question}</div>
-      <div class="poll-options">${optsHtml}</div>
-      ${fbHtml}
-      ${explHtml}
-    </div>
-
-    <!-- nav row -->
-    <div class="poll-nav">
-      <div class="poll-nav-left">
-        <button class="poll-skip-btn" onclick="pollSkip()">Skip â­</button>
-        <button class="poll-done-btn" onclick="pollFinish()">ðŸ Done</button>
-      </div>
-      ${nextBtnHtml}
-    </div>
-
-  </div>`;
-
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-/* â”€â”€ User taps an option â”€â”€ */
-function pollAnswer(idx, oi){
-  if(userAnswers[idx] !== null) return; // already answered
-  userAnswers[idx] = oi;
-  pollRender(idx); // re-render same card with feedback
-}
-
-/* â”€â”€ Next question â”€â”€ */
-function pollNext(){
-  if(pollIdx < questions.length - 1){
-    pollIdx++;
-    pollRender(pollIdx);
-  }
-}
-
-/* â”€â”€ Skip (move next without answering) â”€â”€ */
-function pollSkip(){
-  if(pollIdx < questions.length - 1){
-    pollIdx++;
-    pollRender(pollIdx);
-  } else {
-    pollFinish();
-  }
-}
-
-/* â”€â”€ Toggle explanation â”€â”€ */
-function pollToggleExpl(){
-  const box = document.getElementById('poll-expl-box');
-  const btn = document.getElementById('poll-expl-btn');
-  if(!box) return;
-  const open = box.classList.toggle('open');
-  if(btn) btn.textContent = open ? 'ðŸ”¼ Hide Explanation' : 'ðŸ’¡ View Explanation';
-}
-
-/* â”€â”€ Bookmark toggle â”€â”€ */
-function pollToggleBm(){
-  if(typeof BookmarkSystem === 'undefined') return;
-  BookmarkSystem.toggle(pollIdx);
-  /* refresh button */
-  const isBm = BookmarkSystem.isSaved(questions[pollIdx]);
-  const btn = document.getElementById('pollBmBtn');
-  if(btn){
-    btn.textContent = isBm ? 'ðŸ”– Bookmarked' : 'ðŸ”– Bookmark';
-    btn.className = isBm ? 'poll-bm-btn saved' : 'poll-bm-btn';
-  }
-}
-
-/* â”€â”€ Done â€” show results based on attempted only â”€â”€ */
-function pollFinish(){
-  const attempted = userAnswers.filter(a => a !== null).length;
-  if(attempted === 0){
-    alert('Koi bhi question attempt nahi kiya! Pehle kuch questions try karo. ðŸ˜Š');
-    return;
-  }
-  /* Build trimmed lists of only attempted questions */
-  const trimmedQ = [];
-  const trimmedA = [];
-  questions.forEach((q, i) => {
-    if(userAnswers[i] !== null){
-      trimmedQ.push(q);
-      trimmedA.push(userAnswers[i]);
-    }
-  });
-  /* Set globals to trimmed so showResults scores correctly */
-  questions   = trimmedQ;
-  userAnswers = trimmedA;
-  showResults();
-}
-
-function pollShowResults(){ pollFinish(); }
-
 function startInlineQuiz(pool){
   questions = pool.slice(0, Math.min(selCount || pool.length, pool.length));
   userAnswers = new Array(questions.length).fill(null);
   currentIdx = 0;
-  StrikeManager.updateStrike(); // ðŸ”¥ Student started a quiz â€” credit activity
-  /* Performance Dashboard â€” start timer */
+  StrikeManager.updateStrike(); // 🔥 Student started a quiz — credit activity
+  /* Performance Dashboard — start timer */
   if (typeof PerfDash !== 'undefined') PerfDash.quizStart();
 
   const label = selChapter === ALL_KEY ? 'All Chapters' : selChapter.replace(/^Chapter\s*\d+:\s*/i,'');
   document.getElementById('quizScreen').innerHTML = `
     <div class="quiz-header-row">
-      <div class="quiz-info" id="quizInfoLabel">Class ${selClass} â€º ${subjectNames[selSubject]} â€º ${label} â€º ${questions.length} MCQ</div>
+      <div class="quiz-info" id="quizInfoLabel">Class ${selClass} › ${subjectNames[selSubject]} › ${label} › ${questions.length} MCQ</div>
       <div class="progress-wrap">
         <div class="progress-meta"><span id="progressText">0 answered</span><span id="progressPct">0%</span></div>
         <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
@@ -3469,12 +3145,12 @@ function startInlineQuiz(pool){
     <div class="qcard"><div class="q-num" id="qNum"></div><div class="q-text" id="qText"></div><div class="options" id="optCont"></div></div>
     <div class="nav-row">
       <div class="grp">
-        <button class="qbtn qbtn-sec" id="prevBtn" onclick="prevQ()">â† Previous</button>
-        <button class="qbtn qbtn-pri" id="nextBtn" onclick="nextQ()">Next â†’</button>
+        <button class="qbtn qbtn-sec" id="prevBtn" onclick="prevQ()">← Previous</button>
+        <button class="qbtn qbtn-pri" id="nextBtn" onclick="nextQ()">Next →</button>
       </div>
       <div class="grp">
-        <button class="qbtn qbtn-sub" onclick="submitQuiz()">âœ… Submit</button>
-        <button class="qbtn qbtn-sec" onclick="goHome()">ðŸ  Home</button>
+        <button class="qbtn qbtn-sub" onclick="submitQuiz()">✅ Submit</button>
+        <button class="qbtn qbtn-sec" onclick="goHome()">🏠 Home</button>
       </div>
     </div>`;
 
@@ -3497,7 +3173,7 @@ function renderQ(idx){
   if(pb) pb.disabled = idx===0;
   if(nb) nb.disabled = idx===questions.length-1;
 
-  // Bookmark System â€” add/refresh bookmark button below question
+  // Bookmark System — add/refresh bookmark button below question
   const qcard = document.querySelector('.qcard');
   if (qcard) {
     let bmBtn = qcard.querySelector('.bm-btn');
@@ -3507,7 +3183,7 @@ function renderQ(idx){
       qcard.appendChild(bmBtn);
     }
     const isSaved = typeof BookmarkSystem !== 'undefined' && BookmarkSystem.isSaved(q);
-    bmBtn.textContent = isSaved ? 'ðŸ”– Bookmarked' : 'ðŸ”– Bookmark';
+    bmBtn.textContent = isSaved ? '🔖 Bookmarked' : '🔖 Bookmark';
     bmBtn.classList.toggle('saved', isSaved);
     bmBtn.onclick = (e) => {
       e.stopPropagation();
@@ -3564,34 +3240,34 @@ function showResults(){
     else wrong++;
   });
   const pct = Math.round(correct/questions.length*100);
-  let trophy='ðŸ’ª', msg='Keep Trying!', heroClass='', trophyClass='', extraHtml='';
+  let trophy='💪', msg='Keep Trying!', heroClass='', trophyClass='', extraHtml='';
   if(pct===100){
-    trophy='ðŸ†'; msg='ðŸ”¥ PERFECT SCORE!';
+    trophy='🏆'; msg='🔥 PERFECT SCORE!';
     heroClass='ultra'; trophyClass='ultra-bounce';
-    extraHtml=`<div class="ultra-stars"><span>â­</span><span>â­</span><span>â­</span><span>â­</span><span>â­</span></div><span class="ultra-label">ðŸŽŠ Ultra Pro Max â€” 100% Legend! ðŸŽŠ</span>`;
+    extraHtml=`<div class="ultra-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div><span class="ultra-label">🎊 Ultra Pro Max — 100% Legend! 🎊</span>`;
     setTimeout(()=>{ fireConfetti(); fireConfetti(); setTimeout(fireConfetti,400); },100);
   } else if(pct>90){
-    trophy='ðŸ†'; msg='ðŸŽ‰ Outstanding!';
+    trophy='🏆'; msg='🎉 Outstanding!';
     heroClass='great'; trophyClass='bounce';
-    extraHtml=`<span class="ultra-label">ðŸŒŸ Amazing! You're in the top tier!</span>`;
+    extraHtml=`<span class="ultra-label">🌟 Amazing! You're in the top tier!</span>`;
     setTimeout(()=>fireConfetti(),100);
-  } else if(pct>=80){trophy='ðŸ†';msg='ðŸŽ‰ Excellent!';}
-  else if(pct>=60){trophy='âœ¨';msg='ðŸ‘ Well Done!';}
-  else if(pct>=40){trophy='ðŸ“š';msg='ðŸ“– Keep Learning!';}
+  } else if(pct>=80){trophy='🏆';msg='🎉 Excellent!';}
+  else if(pct>=60){trophy='✨';msg='👍 Well Done!';}
+  else if(pct>=40){trophy='📚';msg='📖 Keep Learning!';}
 
   let dh = '';
   questions.forEach((q,i)=>{
     const a=userAnswers[i],isC=a===q.correct,isU=a===null;
     const solText = (q.sol || '').toString().trim();
-    const solBtn = solText ? `<button class="sol-toggle-btn" onclick="toggleSol(this)" aria-expanded="false">ðŸ’¡ View Explanation</button>` : '';
-    const solBox = solText ? `<div class="sol-box"><div class="sol-label">ðŸ“– Solution</div><div class="sol-text">${solText}</div></div>` : '';
+    const solBtn = solText ? `<button class="sol-toggle-btn" onclick="toggleSol(this)" aria-expanded="false">💡 View Explanation</button>` : '';
+    const solBox = solText ? `<div class="sol-box"><div class="sol-label">📖 Solution</div><div class="sol-text">${solText}</div></div>` : '';
     dh+=`<div class="res-item">
-      <div class="res-q-row"><span class="res-q-num">Q${i+1}</span><span class="res-mark">${isC?'âœ… +1':'âŒ 0'}</span></div>
+      <div class="res-q-row"><span class="res-q-num">Q${i+1}</span><span class="res-mark">${isC?'✅ +1':'❌ 0'}</span></div>
       <div class="res-q-text">${q.question}</div>
       <div class="ans-row">
         ${isU?`<span class="pill pill-u">Not Answered</span>`:
-          isC?`<span class="pill pill-c">âœ” ${LABELS[a]}) ${q.options[a]}</span>`:
-              `<span class="pill pill-w">âœ˜ ${LABELS[a]}) ${q.options[a]}</span>`}
+          isC?`<span class="pill pill-c">✔ ${LABELS[a]}) ${q.options[a]}</span>`:
+              `<span class="pill pill-w">✘ ${LABELS[a]}) ${q.options[a]}</span>`}
         <span class="pill pill-ans">Correct: ${LABELS[q.correct]}) ${q.options[q.correct]}</span>
         ${solBtn}
       </div>${solBox}</div>`;
@@ -3606,27 +3282,27 @@ function showResults(){
         <div class="result-score">Score: ${correct} / ${questions.length}</div>
         <div class="result-percent">Percentage: ${pct}%</div>
         <div class="badges">
-          <span class="badge badge-c">âœ… Correct: ${correct}</span>
-          <span class="badge badge-w">âŒ Wrong: ${wrong}</span>
-          <span class="badge badge-u">â¬œ Skipped: ${unanswered}</span>
+          <span class="badge badge-c">✅ Correct: ${correct}</span>
+          <span class="badge badge-w">❌ Wrong: ${wrong}</span>
+          <span class="badge badge-u">⬜ Skipped: ${unanswered}</span>
         </div>
       </div>
       <div class="res-list-wrap">
-        <div class="res-list-title">ðŸ“‹ Detailed Review</div>
+        <div class="res-list-title">📋 Detailed Review</div>
         <div>${dh}</div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-        <button class="qbtn qbtn-rst" onclick="fetchChapterContent('mcq')">ðŸ”„ Try Again</button>
-        <button class="qbtn qbtn-sec" onclick="goHome()">ðŸ  Go Home</button>
+        <button class="qbtn qbtn-rst" onclick="fetchChapterContent('mcq')">🔄 Try Again</button>
+        <button class="qbtn qbtn-sec" onclick="goHome()">🏠 Go Home</button>
       </div>
     </div>`;
   window.scrollTo({top:0,behavior:'smooth'});
-  StrikeManager.recordActivity(); // ðŸ”¥ Quiz completed â†’ update strike
-  /* Badge System â€” record quiz result for badge evaluation */
+  StrikeManager.recordActivity(); // 🔥 Quiz completed → update strike
+  /* Badge System — record quiz result for badge evaluation */
   BadgeSystem.recordQuiz(questions.length, correct);
-  /* Bookmark System â€” Fix #2: patch bookmarked Qs with final submitted answers */
+  /* Bookmark System — Fix #2: patch bookmarked Qs with final submitted answers */
   if (typeof BookmarkSystem !== 'undefined') BookmarkSystem.updateAnswers();
-  /* Performance Dashboard â€” Data Tracking */
+  /* Performance Dashboard — Data Tracking */
   if (typeof PerfDash !== 'undefined') {
     const chKey = (selChapter && selChapter !== '__ALL__')
       ? selChapter.replace(/^Chapter\s*\d+:\s*/i,'').slice(0,30)
@@ -3640,13 +3316,13 @@ function toggleSol(btn){
   const box = btn.closest('.ans-row').nextElementSibling;
   if(!box || !box.classList.contains('sol-box')) return;
   const open = box.classList.toggle('open');
-  btn.textContent = open ? 'ðŸ”¼ Hide Explanation' : 'ðŸ’¡ View Explanation';
+  btn.textContent = open ? '🔼 Hide Explanation' : '💡 View Explanation';
   btn.setAttribute('aria-expanded', open);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   ðŸ”¥ STRIKE (STREAK) SYSTEM
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════════════
+   🔥 STRIKE (STREAK) SYSTEM
+══════════════════════════════════════════════════════════════ */
 const StrikeManager = (() => {
   const KEY = 'bp_strike';
   const MILESTONES = [5, 10, 15, 20, 30, 50, 100];
@@ -3675,7 +3351,7 @@ const StrikeManager = (() => {
       fireConfetti();
       showMilestoneToast(data.current);
     }
-    /* Badge System â€” sync streak badges after streak updates */
+    /* Badge System — sync streak badges after streak updates */
     if (typeof BadgeSystem !== 'undefined') BadgeSystem.syncStreak();
   }
 
@@ -3686,7 +3362,7 @@ const StrikeManager = (() => {
     const text  = document.getElementById('strikeText');
     if (!badge) return;
     const n = data.current || 0;
-    icon.textContent = n > 0 ? 'ðŸ”¥' : 'â„ï¸';
+    icon.textContent = n > 0 ? '🔥' : '❄️';
     text.textContent = `${n} Day${n !== 1 ? 's' : ''} Strike`;
     badge.classList.toggle('hot',  n > 0);
     badge.classList.toggle('cold', n === 0);
@@ -3698,7 +3374,7 @@ const StrikeManager = (() => {
 
 StrikeManager.init();
 
-/* â”€â”€ TOOLTIP TOGGLE â”€â”€ */
+/* ── TOOLTIP TOGGLE ── */
 function toggleStrikeTooltip(e) {
   e.stopPropagation();
   document.getElementById('strikeTooltip').classList.toggle('open');
@@ -3708,22 +3384,22 @@ document.addEventListener('click', () => {
   if (tip) tip.classList.remove('open');
 });
 
-/* â”€â”€ MILESTONE TOAST â”€â”€ */
+/* ── MILESTONE TOAST ── */
 function showMilestoneToast(days) {
   const toast = document.getElementById('strikeMilestoneToast');
   if (!toast) return;
   const msgs = {
-    5:'ðŸŽ‰ 5-Day Strike! You\'re on fire!', 10:'ðŸ† 10-Day Strike! Legend!',
-    15:'âš¡ 15 Days Strong! Keep going!',   20:'ðŸŒŸ 20-Day Strike! Unstoppable!',
-    30:'ðŸ’Ž 30-Day Strike! True Scholar!',  50:'ðŸ‘‘ 50 Days! Hall of Fame!',
-    100:'ðŸš€ 100-Day Strike! You\'re a Legend!'
+    5:'🎉 5-Day Strike! You\'re on fire!', 10:'🏆 10-Day Strike! Legend!',
+    15:'⚡ 15 Days Strong! Keep going!',   20:'🌟 20-Day Strike! Unstoppable!',
+    30:'💎 30-Day Strike! True Scholar!',  50:'👑 50 Days! Hall of Fame!',
+    100:'🚀 100-Day Strike! You\'re a Legend!'
   };
-  toast.textContent = msgs[days] || `ðŸ”¥ ${days}-Day Strike! Amazing!`;
+  toast.textContent = msgs[days] || `🔥 ${days}-Day Strike! Amazing!`;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3800);
 }
 
-/* â”€â”€ CONFETTI BURST â”€â”€ */
+/* ── CONFETTI BURST ── */
 function fireConfetti() {
   const canvas = document.getElementById('confettiCanvas');
   if (!canvas) return;
@@ -3762,84 +3438,84 @@ function fireConfetti() {
   cancelAnimationFrame(frame); elapsed = 0; draw();
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════════
    GUIDE TOUR ENGINE
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ══════════════════════════════════════════════════════════════ */
 const GUIDE_STEPS = [
   {
-    icon: 'ðŸ‘‹',
+    icon: '👋',
     title: 'Welcome to BachelorPulse!',
-    body: `This short tour will show you exactly how to use the app â€” step by step. It only takes 30 seconds!
-      <div class="tip"><span class="tip-icon">ðŸ’¡</span>You can reopen this guide any time by tapping the <strong>â“ button</strong> at the bottom-left corner of the screen.</div>`
+    body: `This short tour will show you exactly how to use the app — step by step. It only takes 30 seconds!
+      <div class="tip"><span class="tip-icon">💡</span>You can reopen this guide any time by tapping the <strong>❓ button</strong> at the bottom-left corner of the screen.</div>`
   },
   {
-    icon: 'ðŸ«',
-    title: 'Step 1 â€” Pick Your Class',
+    icon: '🏫',
+    title: 'Step 1 — Pick Your Class',
     body: `The first screen shows <strong>Class 6 to 10</strong>. Tap the card that matches your current class.
-      <div class="tip"><span class="tip-icon">ðŸ“Œ</span>All content is based on the official <strong>NCERT syllabus</strong>, so it perfectly matches your school textbooks.</div>`
+      <div class="tip"><span class="tip-icon">📌</span>All content is based on the official <strong>NCERT syllabus</strong>, so it perfectly matches your school textbooks.</div>`
   },
   {
-    icon: 'ðŸ“˜',
-    title: 'Step 2 â€” Choose a Subject',
+    icon: '📘',
+    title: 'Step 2 — Choose a Subject',
     body: `After selecting your class, choose one of three subjects:<br><br>
-      ðŸ”¬ <strong>Science</strong> â€” Biology, Physics, Chemistry<br>
-      âž— <strong>Mathematics</strong> â€” Concepts, Problems, Formulas<br>
-      ðŸŒ <strong>Social Science</strong> â€” History, Geography, Civics`
+      🔬 <strong>Science</strong> — Biology, Physics, Chemistry<br>
+      ➗ <strong>Mathematics</strong> — Concepts, Problems, Formulas<br>
+      🌍 <strong>Social Science</strong> — History, Geography, Civics`
   },
   {
-    icon: 'ðŸ“‘',
-    title: 'Step 3 â€” Select a Chapter',
+    icon: '📑',
+    title: 'Step 3 — Select a Chapter',
     body: `You will see all chapters for your subject. Tap any chapter to continue.
-      <div class="tip"><span class="tip-icon">â­</span>Tap <strong>"All Chapters"</strong> (the golden card at the top) to get mixed questions from every chapter at once â€” great for full revision!</div>`
+      <div class="tip"><span class="tip-icon">⭐</span>Tap <strong>"All Chapters"</strong> (the golden card at the top) to get mixed questions from every chapter at once — great for full revision!</div>`
   },
   {
-    icon: 'âš¡',
-    title: 'Step 4 â€” What Do You Want to Do?',
+    icon: '⚡',
+    title: 'Step 4 — What Do You Want to Do?',
     body: `You have <strong>three modes</strong> to choose from:<br><br>
-      ðŸ“ <strong>MCQ</strong> â€” Take a multiple-choice quiz and test yourself.<br>
-      âœ… <strong>Solution</strong> â€” Read step-by-step solved answers.<br>
-      ðŸ“š <strong>Learn</strong> â€” Study short notes or a visual mind map.`
+      📝 <strong>MCQ</strong> — Take a multiple-choice quiz and test yourself.<br>
+      ✅ <strong>Solution</strong> — Read step-by-step solved answers.<br>
+      📚 <strong>Learn</strong> — Study short notes or a visual mind map.`
   },
   {
-    icon: 'ðŸ“',
-    title: 'Step 5 â€” Taking an MCQ Quiz',
-    body: `If you chose MCQ, first select how many questions you want â€” <strong>10, 25, 50, or 100</strong>. Questions are picked randomly, so every quiz is different!
-      <div class="tip"><span class="tip-icon">ðŸŽ¯</span>Use the <strong>question grid</strong> at the top to jump between questions. Green = answered, Grey = skipped.</div>`
+    icon: '📝',
+    title: 'Step 5 — Taking an MCQ Quiz',
+    body: `If you chose MCQ, first select how many questions you want — <strong>10, 25, 50, or 100</strong>. Questions are picked randomly, so every quiz is different!
+      <div class="tip"><span class="tip-icon">🎯</span>Use the <strong>question grid</strong> at the top to jump between questions. Green = answered, Grey = skipped.</div>`
   },
   {
-    icon: 'ðŸ“Š',
-    title: 'Step 6 â€” Your Quiz Results',
+    icon: '📊',
+    title: 'Step 6 — Your Quiz Results',
     body: `After you submit, you'll see your <strong>score, percentage, and a full review</strong> of every question.<br><br>
-      For each question you can tap <strong>ðŸ’¡ View Explanation</strong> to read the solution from your study material.
-      <div class="tip"><span class="tip-icon">ðŸ”„</span>Hit <strong>Try Again</strong> to retake the same chapter with a fresh set of random questions!</div>`
+      For each question you can tap <strong>💡 View Explanation</strong> to read the solution from your study material.
+      <div class="tip"><span class="tip-icon">🔄</span>Hit <strong>Try Again</strong> to retake the same chapter with a fresh set of random questions!</div>`
   },
   {
-    icon: 'ðŸ§ ',
-    title: 'Step 7 â€” Learn Mode',
+    icon: '🧠',
+    title: 'Step 7 — Learn Mode',
     body: `In <strong>Learn</strong> mode you get two options:<br><br>
-      ðŸ“‹ <strong>Short Note</strong> â€” A concise bullet-point summary, perfect for last-minute revision.<br>
-      ðŸ§  <strong>Mind Map</strong> â€” A visual diagram connecting all key topics. Tap the image to <strong>zoom in</strong> and read every detail clearly.`
+      📋 <strong>Short Note</strong> — A concise bullet-point summary, perfect for last-minute revision.<br>
+      🧠 <strong>Mind Map</strong> — A visual diagram connecting all key topics. Tap the image to <strong>zoom in</strong> and read every detail clearly.`
   },
   {
-    icon: 'âœ…',
-    title: 'Step 8 â€” Mark Chapters Done',
+    icon: '✅',
+    title: 'Step 8 — Mark Chapters Done',
     body: `At the bottom of every Solution, Short Note, or Mind Map page, there is a <strong>"Mark Chapter as Completed"</strong> checkbox. Tick it to track which chapters you have already studied.
-      <div class="tip"><span class="tip-icon">ðŸ’¾</span>Your progress is saved on this device automatically â€” no account needed!</div>`
+      <div class="tip"><span class="tip-icon">💾</span>Your progress is saved on this device automatically — no account needed!</div>`
   },
   {
-    icon: 'ðŸ“¬',
+    icon: '📬',
     title: 'Need Help or Found a Bug?',
     body: `Scroll to the bottom of any page to find the <strong>footer links</strong>:<br><br>
-      ðŸ“– <strong>About</strong> â€” Learn what BachelorPulse is all about.<br>
-      ðŸ”’ <strong>Privacy</strong> â€” See how your data is handled.<br>
-      ðŸ“¬ <strong>Contact</strong> â€” Email us with suggestions or bug reports.
-      <div class="tip"><span class="tip-icon">ðŸš€</span>We read every email! If a chapter is missing, just let us know your class, subject, and chapter name.</div>`
+      📖 <strong>About</strong> — Learn what BachelorPulse is all about.<br>
+      🔒 <strong>Privacy</strong> — See how your data is handled.<br>
+      📬 <strong>Contact</strong> — Email us with suggestions or bug reports.
+      <div class="tip"><span class="tip-icon">🚀</span>We read every email! If a chapter is missing, just let us know your class, subject, and chapter name.</div>`
   },
   {
-    icon: 'ðŸ†',
+    icon: '🏆',
     title: "You're All Set!",
-    body: `You now know everything you need to use BachelorPulse like a pro. Go ahead and start your first quiz â€” good luck! ðŸŽ‰
-      <div class="tip"><span class="tip-icon">â“</span>Remember: tap the <strong>â“ button</strong> at the bottom-left anytime to revisit this guide.</div>`
+    body: `You now know everything you need to use BachelorPulse like a pro. Go ahead and start your first quiz — good luck! 🎉
+      <div class="tip"><span class="tip-icon">❓</span>Remember: tap the <strong>❓ button</strong> at the bottom-left anytime to revisit this guide.</div>`
   }
 ];
 
@@ -3886,26 +3562,26 @@ function renderGuideStep() {
   /* Next / Finish button */
   const next = document.getElementById('guideNext');
   if (isLast) {
-    next.textContent = 'ðŸŽ‰ Start Learning!';
+    next.textContent = '🎉 Start Learning!';
     next.className = 'guide-btn guide-btn-finish';
     next.onclick = closeGuide;
   } else {
-    next.textContent = 'Next â†’';
+    next.textContent = 'Next →';
     next.className = 'guide-btn guide-btn-next';
     next.onclick = () => guideStep(1);
   }
 }
 
-/* Guide auto-show disabled â€” user opens manually via â“ button or footer link */
+/* Guide auto-show disabled — user opens manually via ❓ button or footer link */
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ════════════════════════════════════════════════════════════════
    HAMBURGER PANEL SYSTEM
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+════════════════════════════════════════════════════════════════ */
 function toggleHamPanel() {
   const p=document.getElementById('hamPanel'), o=document.getElementById('hamOverlay');
   p.classList.toggle('open'); o.classList.toggle('open');
-  /* Badge System â€” lazy render badges on first open */
+  /* Badge System — lazy render badges on first open */
   if (p.classList.contains('open') && typeof BadgeSystem !== 'undefined') {
     BadgeSystem.onPanelOpen();
   }
@@ -3914,18 +3590,18 @@ function closeHamPanel() {
   document.getElementById('hamPanel').classList.remove('open');
   document.getElementById('hamOverlay').classList.remove('open');
 }
-/* â•â•â•â• HAMBURGER PANEL SYSTEM END â•â•â•â• */
+/* ════ HAMBURGER PANEL SYSTEM END ════ */
 
-/* â”€â”€ MODAL SYSTEM â”€â”€ */
+/* ── MODAL SYSTEM ── */
 const MODAL_CONTENT = {
-  about: `<h2>ðŸŽ“ About BachelorPulse</h2>
+  about: `<h2>🎓 About BachelorPulse</h2>
     <p>BachelorPulse is an AI-powered educational platform designed specifically for Indian students in Classes 6 through 10. Our mission is simple: make NCERT learning smarter, faster, and more enjoyable for every student across India.</p>
-    <p style="margin-top:12px">We understand the pressure students face â€” from daily homework to board exam preparation. That's why BachelorPulse combines the power of Artificial Intelligence with the trusted NCERT curriculum to deliver an adaptive, personalised quiz experience. Whether you're revising Science concepts, practising Mathematics problems, or brushing up on Social Science, our platform tailors content to your pace and level.</p>
-    <p style="margin-top:12px">With BachelorPulse, students can take MCQ quizzes, read concise chapter solutions, and explore AI-generated mind maps and short notes â€” all without leaving the app. Our streak system and scoring engine keep learners motivated and on track.</p>
-    <p style="margin-top:12px">We believe quality education should be free, accessible, and available in every corner of India â€” from metro cities to small towns. Built with love for students who dream big, BachelorPulse is your daily study companion for Classes 6, 7, 8, 9, and 10 â€” covering Science, Mathematics, and Social Science as per the latest NCERT syllabus.</p>
-    <p style="margin-top:12px">Start your learning journey today. Attempt a quiz, earn a streak, and ace your exams â€” one chapter at a time.</p>`,
+    <p style="margin-top:12px">We understand the pressure students face — from daily homework to board exam preparation. That's why BachelorPulse combines the power of Artificial Intelligence with the trusted NCERT curriculum to deliver an adaptive, personalised quiz experience. Whether you're revising Science concepts, practising Mathematics problems, or brushing up on Social Science, our platform tailors content to your pace and level.</p>
+    <p style="margin-top:12px">With BachelorPulse, students can take MCQ quizzes, read concise chapter solutions, and explore AI-generated mind maps and short notes — all without leaving the app. Our streak system and scoring engine keep learners motivated and on track.</p>
+    <p style="margin-top:12px">We believe quality education should be free, accessible, and available in every corner of India — from metro cities to small towns. Built with love for students who dream big, BachelorPulse is your daily study companion for Classes 6, 7, 8, 9, and 10 — covering Science, Mathematics, and Social Science as per the latest NCERT syllabus.</p>
+    <p style="margin-top:12px">Start your learning journey today. Attempt a quiz, earn a streak, and ace your exams — one chapter at a time.</p>`,
 
-  privacy: `<h2>ðŸ”’ Privacy Policy</h2>
+  privacy: `<h2>🔒 Privacy Policy</h2>
     <p><strong>Effective Date:</strong> January 1, 2025 &nbsp;|&nbsp; <strong>Last Updated:</strong> March 2025</p>
 
     <p style="margin-top:14px">BachelorPulse ("we", "our", or "us") operates the BachelorPulse educational application (the "App"). This Privacy Policy explains how we collect, use, and share information when you use our App. By using BachelorPulse, you agree to the terms described in this policy.</p>
@@ -3938,10 +3614,10 @@ const MODAL_CONTENT = {
     <p style="margin-top:8px">We use the information collected to: operate and improve the App; display relevant advertisements through Google AdMob and other advertising networks; analyse usage trends to improve content and features; and ensure technical functionality and prevent abuse.</p>
 
     <h3 style="margin-top:16px;color:var(--accent2);font-family:'Baloo 2',cursive">3. Advertising</h3>
-    <p style="margin-top:8px">BachelorPulse is a free app supported by advertising. We use <strong>Google AdMob</strong> to serve ads. Google AdMob may use your Advertising ID and other data to show you personalised advertisements based on your interests. You can opt out of personalised advertising at any time by adjusting your device settings (Android: Settings â†’ Google â†’ Ads; iOS: Settings â†’ Privacy â†’ Advertising). For more information on how Google uses data from apps, visit: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+    <p style="margin-top:8px">BachelorPulse is a free app supported by advertising. We use <strong>Google AdMob</strong> to serve ads. Google AdMob may use your Advertising ID and other data to show you personalised advertisements based on your interests. You can opt out of personalised advertising at any time by adjusting your device settings (Android: Settings → Google → Ads; iOS: Settings → Privacy → Advertising). For more information on how Google uses data from apps, visit: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
 
     <h3 style="margin-top:16px;color:var(--accent2);font-family:'Baloo 2',cursive">4. Children's Privacy</h3>
-    <p style="margin-top:8px">BachelorPulse is designed for students of Classes 6â€“10 (generally ages 11â€“16). We do not knowingly collect personally identifiable information from children under 13. Advertising served within the App is configured for a mixed or general audience and complies with applicable children's privacy laws, including COPPA and India's IT Act. Parents and guardians who believe their child has provided personal information should contact us at <a href="mailto:sirshashwatsingh@gmail.com">sirshashwatsingh@gmail.com</a>.</p>
+    <p style="margin-top:8px">BachelorPulse is designed for students of Classes 6–10 (generally ages 11–16). We do not knowingly collect personally identifiable information from children under 13. Advertising served within the App is configured for a mixed or general audience and complies with applicable children's privacy laws, including COPPA and India's IT Act. Parents and guardians who believe their child has provided personal information should contact us at <a href="mailto:sirshashwatsingh@gmail.com">sirshashwatsingh@gmail.com</a>.</p>
 
     <h3 style="margin-top:16px;color:var(--accent2);font-family:'Baloo 2',cursive">5. Third-Party Services</h3>
     <p style="margin-top:8px">The App may use the following third-party services, each with their own privacy policies: <strong>Google AdMob</strong> (advertising); <strong>Google Firebase</strong> (analytics and crash reporting, if enabled); <strong>GitHub</strong> (content hosting via raw GitHub URLs). We are not responsible for the privacy practices of these third parties.</p>
@@ -3958,11 +3634,11 @@ const MODAL_CONTENT = {
     <h3 style="margin-top:16px;color:var(--accent2);font-family:'Baloo 2',cursive">9. Contact Us</h3>
     <p style="margin-top:8px">If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:sirshashwatsingh@gmail.com">sirshashwatsingh@gmail.com</a></p>`,
 
-  contact: `<h2>ðŸ“¬ Contact Us</h2>
-    <p>We'd love to hear from you! Whether you have a suggestion, a bug report, a content request, or just want to say hello â€” reach out anytime.</p>
+  contact: `<h2>📬 Contact Us</h2>
+    <p>We'd love to hear from you! Whether you have a suggestion, a bug report, a content request, or just want to say hello — reach out anytime.</p>
     <p style="margin-top:12px"><strong>Email:</strong> <a href="mailto:sirshashwatsingh@gmail.com">sirshashwatsingh@gmail.com</a></p>
-    <p style="margin-top:12px">We aim to respond within 2â€“3 business days. For chapter or subject requests, please mention your class, subject, and chapter name in the email so we can prioritise accordingly.</p>
-    <p style="margin-top:12px">Thank you for being a part of the BachelorPulse learning community! ðŸš€</p>`
+    <p style="margin-top:12px">We aim to respond within 2–3 business days. For chapter or subject requests, please mention your class, subject, and chapter name in the email so we can prioritise accordingly.</p>
+    <p style="margin-top:12px">Thank you for being a part of the BachelorPulse learning community! 🚀</p>`
 };
 function openModal(key) {
   document.getElementById('bpModalBody').innerHTML = MODAL_CONTENT[key] || '';
@@ -3975,14 +3651,14 @@ function closeModal() {
 }
 function closeModalOutside(e) { if(e.target===document.getElementById('bpOverlay')) closeModal(); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ════════════════════════════════════════════════════════════════
    Badge System
-   â€” MCQ count badges, Accuracy badges, Streak badges
-   â€” localStorage key: bp_badges (object of earned badge ids)
-   â€” bp_stats: { totalMCQ, bestAccuracy }
-   â€” No spam: accuracy badge needs min 10 questions answered
-   â€” Lazy UI: badge grid rendered only when panel opens
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   — MCQ count badges, Accuracy badges, Streak badges
+   — localStorage key: bp_badges (object of earned badge ids)
+   — bp_stats: { totalMCQ, bestAccuracy }
+   — No spam: accuracy badge needs min 10 questions answered
+   — Lazy UI: badge grid rendered only when panel opens
+════════════════════════════════════════════════════════════════ */
 const BadgeSystem = (() => {
   const STATS_KEY  = 'bp_stats';
   const EARNED_KEY = 'bp_badges';
@@ -3990,22 +3666,22 @@ const BadgeSystem = (() => {
   /* All badge definitions */
   const BADGES = [
     /* MCQ Count */
-    { id:'mcq_100',   cat:'MCQ',      icon:'ðŸ“', name:'First 100',    sub:'100 MCQs done',   req: s => s.totalMCQ >= 100   },
-    { id:'mcq_500',   cat:'MCQ',      icon:'âœï¸', name:'500 Club',     sub:'500 MCQs done',   req: s => s.totalMCQ >= 500   },
-    { id:'mcq_1k',    cat:'MCQ',      icon:'ðŸŽ¯', name:'1K Champ',     sub:'1000 MCQs done',  req: s => s.totalMCQ >= 1000  },
-    { id:'mcq_5k',    cat:'MCQ',      icon:'ðŸš€', name:'5K Legend',    sub:'5000 MCQs done',  req: s => s.totalMCQ >= 5000  },
-    { id:'mcq_10k',   cat:'MCQ',      icon:'ðŸ‘‘', name:'10K God',      sub:'10000 MCQs done', req: s => s.totalMCQ >= 10000 },
+    { id:'mcq_100',   cat:'MCQ',      icon:'📝', name:'First 100',    sub:'100 MCQs done',   req: s => s.totalMCQ >= 100   },
+    { id:'mcq_500',   cat:'MCQ',      icon:'✏️', name:'500 Club',     sub:'500 MCQs done',   req: s => s.totalMCQ >= 500   },
+    { id:'mcq_1k',    cat:'MCQ',      icon:'🎯', name:'1K Champ',     sub:'1000 MCQs done',  req: s => s.totalMCQ >= 1000  },
+    { id:'mcq_5k',    cat:'MCQ',      icon:'🚀', name:'5K Legend',    sub:'5000 MCQs done',  req: s => s.totalMCQ >= 5000  },
+    { id:'mcq_10k',   cat:'MCQ',      icon:'👑', name:'10K God',      sub:'10000 MCQs done', req: s => s.totalMCQ >= 10000 },
     /* Accuracy */
-    { id:'acc_80',    cat:'Accuracy', icon:'âœ…', name:'Sharpshooter', sub:'80%+ accuracy',   req: s => s.bestAccuracy >= 80  },
-    { id:'acc_90',    cat:'Accuracy', icon:'ðŸŽ–ï¸', name:'Excellence',   sub:'90%+ accuracy',   req: s => s.bestAccuracy >= 90  },
-    { id:'acc_100',   cat:'Accuracy', icon:'ðŸ†', name:'Perfect',      sub:'100% accuracy',   req: s => s.bestAccuracy >= 100 },
+    { id:'acc_80',    cat:'Accuracy', icon:'✅', name:'Sharpshooter', sub:'80%+ accuracy',   req: s => s.bestAccuracy >= 80  },
+    { id:'acc_90',    cat:'Accuracy', icon:'🎖️', name:'Excellence',   sub:'90%+ accuracy',   req: s => s.bestAccuracy >= 90  },
+    { id:'acc_100',   cat:'Accuracy', icon:'🏆', name:'Perfect',      sub:'100% accuracy',   req: s => s.bestAccuracy >= 100 },
     /* Streak */
-    { id:'str_3',     cat:'Streak',   icon:'ðŸ”¥', name:'On Fire',      sub:'3-day streak',    req: s => s.bestStreak >= 3  },
-    { id:'str_7',     cat:'Streak',   icon:'âš¡', name:'Week Warrior', sub:'7-day streak',    req: s => s.bestStreak >= 7  },
-    { id:'str_30',    cat:'Streak',   icon:'ðŸ’Ž', name:'Iron Scholar', sub:'30-day streak',   req: s => s.bestStreak >= 30 },
+    { id:'str_3',     cat:'Streak',   icon:'🔥', name:'On Fire',      sub:'3-day streak',    req: s => s.bestStreak >= 3  },
+    { id:'str_7',     cat:'Streak',   icon:'⚡', name:'Week Warrior', sub:'7-day streak',    req: s => s.bestStreak >= 7  },
+    { id:'str_30',    cat:'Streak',   icon:'💎', name:'Iron Scholar', sub:'30-day streak',   req: s => s.bestStreak >= 30 },
   ];
 
-  /* Performance Optimization â€” debounce writes */
+  /* Performance Optimization — debounce writes */
   let _saveTimer = null;
   function loadStats()  {
     try { return JSON.parse(localStorage.getItem(STATS_KEY))  || { totalMCQ:0, bestAccuracy:0, bestStreak:0 }; }
@@ -4016,7 +3692,7 @@ const BadgeSystem = (() => {
     catch { return {}; }
   }
   function saveStats(s) {
-    /* Performance Optimization â€” debounce: avoid repeated writes within 500ms */
+    /* Performance Optimization — debounce: avoid repeated writes within 500ms */
     clearTimeout(_saveTimer);
     _saveTimer = setTimeout(() => localStorage.setItem(STATS_KEY, JSON.stringify(s)), 500);
   }
@@ -4050,9 +3726,9 @@ const BadgeSystem = (() => {
     }
   }
 
-  /* Record MCQ quiz completion â€” called from showResults() */
+  /* Record MCQ quiz completion — called from showResults() */
   function recordQuiz(totalQs, correctQs) {
-    /* Performance Optimization â€” skip if no real questions answered */
+    /* Performance Optimization — skip if no real questions answered */
     if (!totalQs || totalQs < 1) return;
     const accuracy = Math.round((correctQs / totalQs) * 100);
     const stats  = loadStats();
@@ -4086,10 +3762,10 @@ const BadgeSystem = (() => {
     } catch(e) {}
   }
 
-  /* Badge count chip removed â€” no distraction on hamburger */
+  /* Badge count chip removed — no distraction on hamburger */
   function updateChip() { /* removed */ }
 
-  /* Performance Optimization â€” badge grid rendered lazily (only when panel opens) */
+  /* Performance Optimization — badge grid rendered lazily (only when panel opens) */
   let _gridRendered = false;
   function renderBadgeGrid() {
     const grid = document.getElementById('badgeGrid');
@@ -4100,15 +3776,15 @@ const BadgeSystem = (() => {
     const earnedCount = Object.keys(earned).length;
     if (label) label.textContent = `(${earnedCount}/${BADGES.length})`;
 
-    /* Performance Optimization â€” use DocumentFragment for single DOM insert */
+    /* Performance Optimization — use DocumentFragment for single DOM insert */
     const frag = document.createDocumentFragment();
     BADGES.forEach(b => {
       const isUnlocked = !!earned[b.id];
       const card = document.createElement('div');
       card.className = 'bdg-card ' + (isUnlocked ? 'unlocked' : 'locked');
-      card.title = isUnlocked ? `${b.name}: ${b.sub}` : `Locked â€” ${b.sub}`;
+      card.title = isUnlocked ? `${b.name}: ${b.sub}` : `Locked — ${b.sub}`;
       card.innerHTML =
-        `<span class="bdg-icon">${isUnlocked ? b.icon : 'ðŸ”’'}</span>` +
+        `<span class="bdg-icon">${isUnlocked ? b.icon : '🔒'}</span>` +
         `<span class="bdg-name">${b.name}</span>` +
         `<span class="bdg-sub">${b.sub}</span>`;
       frag.appendChild(card);
@@ -4120,7 +3796,7 @@ const BadgeSystem = (() => {
   }
 
   function onPanelOpen() {
-    /* Performance Optimization â€” only re-render if not yet rendered this session */
+    /* Performance Optimization — only re-render if not yet rendered this session */
     if (!_gridRendered) renderBadgeGrid();
   }
 
@@ -4135,39 +3811,39 @@ const BadgeSystem = (() => {
 
 BadgeSystem.init();
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   Bookmark System â€” FIXED (all 9 bugs resolved)
-   Storage key : bp_bookmarks â†’ array of objects
+/* ════════════════════════════════════════════════════════════════
+   Bookmark System — FIXED (all 9 bugs resolved)
+   Storage key : bp_bookmarks → array of objects
    Each entry  : { id, question, options, correct, userAnswer, chapter, ts }
    Fixes applied:
-     #1 â€” removed debounce from save(); writes synchronously
-     #2 â€” updateAnswer() patches saved entry when quiz submitted
-     #3 â€” remove() writes sync; _renderList() called after write
-     #4 â€” DOMContentLoaded replaced with direct init (DOM ready at script end)
-     #5 â€” Esc handled in existing keydown, not duplicated
-     #6 â€” _updateHamCount() called on startup directly
-     #7 â€” qcard found via closest(), not querySelector
-     #8 â€” toggle() only updates bm-btn, no full renderQ() re-render
-     #9 â€” question text sanitised before innerHTML injection
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+     #1 — removed debounce from save(); writes synchronously
+     #2 — updateAnswer() patches saved entry when quiz submitted
+     #3 — remove() writes sync; _renderList() called after write
+     #4 — DOMContentLoaded replaced with direct init (DOM ready at script end)
+     #5 — Esc handled in existing keydown, not duplicated
+     #6 — _updateHamCount() called on startup directly
+     #7 — qcard found via closest(), not querySelector
+     #8 — toggle() only updates bm-btn, no full renderQ() re-render
+     #9 — question text sanitised before innerHTML injection
+════════════════════════════════════════════════════════════════ */
 const BookmarkSystem = (() => {
   const BM_KEY = 'bp_bookmarks';
   const MAX_BM = 200;
   let _filter  = 'all';
 
-  /* â”€â”€ Storage Logic â€” synchronous (no debounce) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Storage Logic — synchronous (no debounce) ───────────── */
   function load() {
     try { return JSON.parse(localStorage.getItem(BM_KEY)) || []; }
     catch { return []; }
   }
-  // Fix #1 â€” sync write, no debounce so isSaved() reads correct state immediately
+  // Fix #1 — sync write, no debounce so isSaved() reads correct state immediately
   function save(arr) {
     if (arr.length > MAX_BM) arr = arr.slice(-MAX_BM);
     try { localStorage.setItem(BM_KEY, JSON.stringify(arr)); }
     catch(e) { console.warn('[Bookmark] Storage write failed:', e); }
   }
 
-  // Fix #9 â€” sanitise text before injecting into innerHTML
+  // Fix #9 — sanitise text before injecting into innerHTML
   function _esc(str) {
     return String(str)
       .replace(/&/g,'&amp;')
@@ -4183,7 +3859,7 @@ const BookmarkSystem = (() => {
     return 'bm_' + Math.abs(h).toString(36);
   }
 
-  /* â”€â”€ Toggle â€” Fix #8: only update button, no full renderQ â”€â”€ */
+  /* ── Toggle — Fix #8: only update button, no full renderQ ── */
   function toggle(idx) {
     const q   = questions[idx];
     const ua  = (userAnswers && userAnswers[idx] !== undefined) ? userAnswers[idx] : null;
@@ -4193,7 +3869,7 @@ const BookmarkSystem = (() => {
 
     if (pos !== -1) {
       list.splice(pos, 1);
-      save(list);  // Fix #1 â€” sync write
+      save(list);  // Fix #1 — sync write
       _showToast('Bookmark removed');
     } else {
       const chapter = (typeof selChapter !== 'undefined' && selChapter && selChapter !== '__ALL__')
@@ -4201,19 +3877,19 @@ const BookmarkSystem = (() => {
         : (typeof selSubject !== 'undefined' ? (selSubject || '') : '');
       list.push({ id, question: q.question, options: q.options, correct: q.correct,
                   userAnswer: ua, chapter, ts: Date.now() });
-      save(list);  // Fix #1 â€” sync write
-      _showToast('ðŸ”– Bookmarked!');
+      save(list);  // Fix #1 — sync write
+      _showToast('🔖 Bookmarked!');
     }
 
-    // Fix #8 â€” only update the button, no full renderQ() re-render (no flicker)
-    // Fix #7 â€” find qcard safely via closest()
+    // Fix #8 — only update the button, no full renderQ() re-render (no flicker)
+    // Fix #7 — find qcard safely via closest()
     const optCont = document.getElementById('optCont');
     const qcard   = optCont ? optCont.closest('.qcard') : document.querySelector('.qcard');
     if (qcard) {
       const btn = qcard.querySelector('.bm-btn');
-      const saved = load().some(b => b.id === id); // Fix #1 â€” reads fresh state
+      const saved = load().some(b => b.id === id); // Fix #1 — reads fresh state
       if (btn) {
-        btn.textContent = saved ? 'ðŸ”– Bookmarked' : 'ðŸ”– Bookmark';
+        btn.textContent = saved ? '🔖 Bookmarked' : '🔖 Bookmark';
         btn.classList.toggle('saved', saved);
       }
     }
@@ -4224,7 +3900,7 @@ const BookmarkSystem = (() => {
     return load().some(b => b.id === makeId(q.question));
   }
 
-  // Fix #2 â€” called from showResults() to patch userAnswer after quiz submit
+  // Fix #2 — called from showResults() to patch userAnswer after quiz submit
   function updateAnswers() {
     if (!questions || !questions.length) return;
     const list    = load();
@@ -4243,7 +3919,7 @@ const BookmarkSystem = (() => {
     if (changed) save(list);
   }
 
-  /* â”€â”€ Toast â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Toast ────────────────────────────────────────────────── */
   function _showToast(msg) {
     const t = document.getElementById('bm-toast');
     if (!t) return;
@@ -4253,7 +3929,7 @@ const BookmarkSystem = (() => {
     t._timer = setTimeout(() => t.classList.remove('show'), 2000);
   }
 
-  /* â”€â”€ Hamburger count badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Hamburger count badge ────────────────────────────────── */
   function _updateHamCount() {
     const el = document.getElementById('bmHamCount');
     if (!el) return;
@@ -4262,7 +3938,7 @@ const BookmarkSystem = (() => {
     el.style.display = n > 0 ? 'inline' : 'none';
   }
 
-  /* â”€â”€ Filter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Filter ───────────────────────────────────────────────── */
   function setFilter(btn, f) {
     _filter = f;
     document.querySelectorAll('.bm-filter').forEach(b => b.classList.remove('active'));
@@ -4270,7 +3946,7 @@ const BookmarkSystem = (() => {
     _renderList();
   }
 
-  /* â”€â”€ Render list â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Render list ──────────────────────────────────────────── */
   function _renderList() {
     const list   = load();
     const count  = document.getElementById('bmCount');
@@ -4289,9 +3965,9 @@ const BookmarkSystem = (() => {
       `Showing <span>${filtered.length}</span> of <span>${list.length}</span> bookmarks`;
 
     if (filtered.length === 0) {
-      listEl.innerHTML = `<div class="bm-empty"><span class="big">ðŸ”–</span>
+      listEl.innerHTML = `<div class="bm-empty"><span class="big">🔖</span>
         ${list.length === 0
-          ? `<p>No bookmarks yet.<br>Tap <strong>ðŸ”– Bookmark</strong> on any question.</p>`
+          ? `<p>No bookmarks yet.<br>Tap <strong>🔖 Bookmark</strong> on any question.</p>`
           : `<p>No questions match this filter.</p>`}
       </div>`;
       return;
@@ -4304,23 +3980,23 @@ const BookmarkSystem = (() => {
       const isUnanswered = b.userAnswer === null;
       const cardClass    = isCorrect ? 'correct' : isWrong ? 'wrong' : 'unanswered';
       const tagClass     = isCorrect ? 'c' : isWrong ? 'w' : '';
-      const tagLabel     = isCorrect ? 'âœ… Correct' : isWrong ? 'âŒ Wrong' : 'â¬œ Skipped';
+      const tagLabel     = isCorrect ? '✅ Correct' : isWrong ? '❌ Wrong' : '⬜ Skipped';
 
       let yourPill = isUnanswered
         ? `<span class="bm-pill your-u">Not Answered</span>`
         : (() => {
             const lbl = LABELS[b.userAnswer] || '?';
             const ans = _esc((b.options && b.options[b.userAnswer]) ? b.options[b.userAnswer] : '');
-            return `<span class="bm-pill ${isCorrect?'your-c':'your-w'}">${isCorrect?'âœ”':'âœ˜'} ${lbl}) ${ans}</span>`;
+            return `<span class="bm-pill ${isCorrect?'your-c':'your-w'}">${isCorrect?'✔':'✘'} ${lbl}) ${ans}</span>`;
           })();
 
       const corrLbl = LABELS[b.correct] || '?';
       const corrAns = _esc((b.options && b.options[b.correct]) ? b.options[b.correct] : '');
-      const corrPill = `<span class="bm-pill correct-ans">âœ” ${corrLbl}) ${corrAns}</span>`;
+      const corrPill = `<span class="bm-pill correct-ans">✔ ${corrLbl}) ${corrAns}</span>`;
 
       const card = document.createElement('div');
       card.className = `bm-card ${cardClass}`;
-      // Fix #9 â€” question text sanitised via _esc()
+      // Fix #9 — question text sanitised via _esc()
       card.innerHTML = `
         <div class="bm-card-meta">
           <span class="bm-tag ${tagClass}">${tagLabel}</span>
@@ -4329,10 +4005,10 @@ const BookmarkSystem = (() => {
         <div class="bm-q-text">${_esc(b.question)}</div>
         <div class="bm-ans-row">${yourPill}${corrPill}</div>
         <div class="bm-actions">
-          <button class="bm-action-btn remove">ðŸ—‘ï¸ Remove</button>
+          <button class="bm-action-btn remove">🗑️ Remove</button>
         </div>`;
 
-      // Fix #3 â€” sync remove then re-render (no race with debounce)
+      // Fix #3 — sync remove then re-render (no race with debounce)
       card.querySelector('.bm-action-btn.remove').addEventListener('click', () => {
         const fresh = load().filter(x => x.id !== b.id);
         save(fresh);              // sync write
@@ -4349,13 +4025,13 @@ const BookmarkSystem = (() => {
     listEl.appendChild(frag);
   }
 
-  /* â”€â”€ Remove by id (public) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Remove by id (public) ────────────────────────────────── */
   function remove(id) {
-    save(load().filter(b => b.id !== id)); // Fix #3 â€” sync write
+    save(load().filter(b => b.id !== id)); // Fix #3 — sync write
     _updateHamCount();
   }
 
-  /* â”€â”€ Open / Close â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Open / Close ─────────────────────────────────────────── */
   function open() {
     const ov = document.getElementById('bm-overlay');
     if (!ov) return;
@@ -4377,32 +4053,32 @@ const BookmarkSystem = (() => {
     document.body.style.overflow = '';
   }
 
-  /* Fix #4 â€” DOM is already ready (script at end of body), init directly */
-  /* Fix #6 â€” _updateHamCount runs immediately on startup */
+  /* Fix #4 — DOM is already ready (script at end of body), init directly */
+  /* Fix #6 — _updateHamCount runs immediately on startup */
   (() => {
     const ov = document.getElementById('bm-overlay');
     if (ov) {
       // Close on backdrop click
       ov.addEventListener('click', e => { if (e.target === ov) close(); });
     }
-    // Fix #5 â€” NO new Esc listener; existing keydown handler already covers it
+    // Fix #5 — NO new Esc listener; existing keydown handler already covers it
     // (see the keydown listener below that calls closeLightbox + closeModal)
-    _updateHamCount(); // Fix #6 â€” show count on page load if bookmarks exist
+    _updateHamCount(); // Fix #6 — show count on page load if bookmarks exist
   })();
 
   return { toggle, isSaved, open, close, setFilter, remove, updateAnswers };
 })();
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   Performance Dashboard â€” Data Tracking + Graph System
+/* ════════════════════════════════════════════════════════════════
+   Performance Dashboard — Data Tracking + Graph System
    Storage keys:
      bp_pd_log   : compact array of quiz sessions
                    each: [timestamp, total, correct, chapterKey, timeSpentSec]
      bp_pd_time  : { today: YYYY-MM-DD, todaySec: N, weekSec: N, weekStart: YYYY-MM-DD }
    Lazy calculation: all stats computed only on open, never on page load
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+════════════════════════════════════════════════════════════════ */
 const PerfDash = (() => {
-  /* â”€â”€ Storage helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Storage helpers ─────────────────────────────────────── */
   const LOG_KEY  = 'bp_pd_log';
   const TIME_KEY = 'bp_pd_time';
 
@@ -4410,7 +4086,7 @@ const PerfDash = (() => {
   function loadTime() { try { return JSON.parse(localStorage.getItem(TIME_KEY)) || {}; } catch { return {}; } }
 
   function saveLog(a) {
-    /* Performance Optimization â€” keep last 500 sessions max (compact) */
+    /* Performance Optimization — keep last 500 sessions max (compact) */
     if (a.length > 500) a = a.slice(-500);
     localStorage.setItem(LOG_KEY, JSON.stringify(a));
   }
@@ -4423,7 +4099,7 @@ const PerfDash = (() => {
     return d.toISOString().slice(0,10);
   }
 
-  /* â”€â”€ Data Tracking â€” called from showResults() â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Data Tracking — called from showResults() ───────────── */
   let _quizStartTime = 0;
 
   function quizStart() { _quizStartTime = Date.now(); }
@@ -4448,7 +4124,7 @@ const PerfDash = (() => {
     saveTime(t);
   }
 
-  /* â”€â”€ Stat Calculation (lazy â€” only on open) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Stat Calculation (lazy — only on open) ──────────────── */
   function calcStats(log) {
     let totalQ = 0, totalC = 0;
     log.forEach(e => { totalQ += e[1]; totalC += e[2]; });
@@ -4511,7 +4187,7 @@ const PerfDash = (() => {
       const wkNum = 4 - w;
       weeks.push({
         label: `Wk${wkNum}`,
-        sublabel: startDate.toLocaleDateString('en-IN',{day:'numeric',month:'short'}) + 'â€“' + endDate.toLocaleDateString('en-IN',{day:'numeric',month:'short'}),
+        sublabel: startDate.toLocaleDateString('en-IN',{day:'numeric',month:'short'}) + '–' + endDate.toLocaleDateString('en-IN',{day:'numeric',month:'short'}),
         q, c, acc: q ? Math.round(c/q*100) : 0
       });
     }
@@ -4554,26 +4230,26 @@ const PerfDash = (() => {
     return h > 0 ? `${h}h ${m}m` : `${m}m`;
   }
 
-  /* â”€â”€ Insight Generator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Insight Generator ───────────────────────────────────── */
   function buildInsights(log, days, stats) {
     const msgs = [];
 
     /* Streak warnings */
     if (stats.streak === 0)
-      msgs.push({ type:'warn', icon:'âš ï¸', text:'You have no active streak. Attempt a quiz today to start one!' });
+      msgs.push({ type:'warn', icon:'⚠️', text:'You have no active streak. Attempt a quiz today to start one!' });
     else if (stats.streak >= 7)
-      msgs.push({ type:'good', icon:'ðŸ”¥', text:`${stats.streak}-day streak! You're on fire. Keep it going!` });
+      msgs.push({ type:'good', icon:'🔥', text:`${stats.streak}-day streak! You're on fire. Keep it going!` });
     else
-      msgs.push({ type:'info', icon:'ðŸ“…', text:`${stats.streak}-day streak active. Come back tomorrow to keep it alive!` });
+      msgs.push({ type:'info', icon:'📅', text:`${stats.streak}-day streak active. Come back tomorrow to keep it alive!` });
 
     /* Today's activity */
     const todayEntry = days[days.length - 1];
     if (todayEntry.q >= 50)
-      msgs.push({ type:'good', icon:'ðŸ’ª', text:`You solved ${todayEntry.q} MCQs today. Incredible dedication!` });
+      msgs.push({ type:'good', icon:'💪', text:`You solved ${todayEntry.q} MCQs today. Incredible dedication!` });
     else if (todayEntry.q > 0)
-      msgs.push({ type:'info', icon:'ðŸ“', text:`${todayEntry.q} MCQs done today. Aim for 25+ to build strong habits.` });
+      msgs.push({ type:'info', icon:'📝', text:`${todayEntry.q} MCQs done today. Aim for 25+ to build strong habits.` });
     else
-      msgs.push({ type:'warn', icon:'ðŸ˜´', text:"No MCQs today yet. Even 10 questions keeps the momentum going!" });
+      msgs.push({ type:'warn', icon:'😴', text:"No MCQs today yet. Even 10 questions keeps the momentum going!" });
 
     /* Weekly trend */
     const weekQ = days.reduce((s,d) => s + d.q, 0);
@@ -4587,29 +4263,29 @@ const PerfDash = (() => {
       return s;
     })();
     if (weekQ > prevWeekQ && prevWeekQ > 0)
-      msgs.push({ type:'good', icon:'ðŸ“ˆ', text:`This week: ${weekQ} MCQs vs last week: ${prevWeekQ}. Great improvement!` });
+      msgs.push({ type:'good', icon:'📈', text:`This week: ${weekQ} MCQs vs last week: ${prevWeekQ}. Great improvement!` });
     else if (weekQ < prevWeekQ && prevWeekQ > 0)
-      msgs.push({ type:'warn', icon:'ðŸ“‰', text:`This week: ${weekQ} MCQs vs last week: ${prevWeekQ}. Try to beat last week!` });
+      msgs.push({ type:'warn', icon:'📉', text:`This week: ${weekQ} MCQs vs last week: ${prevWeekQ}. Try to beat last week!` });
 
     /* Accuracy */
     if (stats.acc >= 90)
-      msgs.push({ type:'good', icon:'ðŸŽ¯', text:`${stats.acc}% overall accuracy. You're mastering the material!` });
+      msgs.push({ type:'good', icon:'🎯', text:`${stats.acc}% overall accuracy. You're mastering the material!` });
     else if (stats.acc >= 70)
-      msgs.push({ type:'info', icon:'âœ…', text:`${stats.acc}% accuracy. Good! Focus on weak chapters to push above 80%.` });
+      msgs.push({ type:'info', icon:'✅', text:`${stats.acc}% accuracy. Good! Focus on weak chapters to push above 80%.` });
     else if (stats.acc > 0)
-      msgs.push({ type:'warn', icon:'ðŸ“š', text:`${stats.acc}% accuracy. Review your solutions and try shorter quizzes first.` });
+      msgs.push({ type:'warn', icon:'📚', text:`${stats.acc}% accuracy. Review your solutions and try shorter quizzes first.` });
 
     /* Active days */
     const activeDays = days.filter(d => d.q > 0).length;
     if (activeDays >= 6)
-      msgs.push({ type:'good', icon:'ðŸŒŸ', text:`Active ${activeDays}/7 days this week. Near-perfect consistency!` });
+      msgs.push({ type:'good', icon:'🌟', text:`Active ${activeDays}/7 days this week. Near-perfect consistency!` });
     else if (activeDays >= 3)
-      msgs.push({ type:'info', icon:'ðŸ“†', text:`Active ${activeDays}/7 days. Try to practice every day for best results.` });
+      msgs.push({ type:'info', icon:'📆', text:`Active ${activeDays}/7 days. Try to practice every day for best results.` });
 
     return msgs;
   }
 
-  /* â”€â”€ Graph System â€” CSS bar chart â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Graph System — CSS bar chart ────────────────────────── */
   function barChart(data, colorClass, labelKey, valueKey, unit) {
     const max = Math.max(...data.map(d => d[valueKey]), 1);
     const bars = data.map(d => {
@@ -4624,30 +4300,30 @@ const PerfDash = (() => {
     return `<div class="pd-bar-row">${bars}</div>`;
   }
 
-  /* â”€â”€ Render functions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Render functions ────────────────────────────────────── */
   function renderOverview(log, days, stats) {
     /* Stat cards */
     document.getElementById('pdStatCards').innerHTML = `
       <div class="pd-stat"><div class="pd-stat-val">${stats.totalQ.toLocaleString()}</div><div class="pd-stat-lbl">MCQs Attempted</div></div>
       <div class="pd-stat green"><div class="pd-stat-val">${stats.totalC.toLocaleString()}</div><div class="pd-stat-lbl">Correct</div></div>
       <div class="pd-stat blue"><div class="pd-stat-val">${stats.acc}%</div><div class="pd-stat-lbl">Accuracy</div></div>
-      <div class="pd-stat"><div class="pd-stat-val">${stats.streak}ðŸ”¥</div><div class="pd-stat-lbl">Current Streak</div></div>
+      <div class="pd-stat"><div class="pd-stat-val">${stats.streak}🔥</div><div class="pd-stat-lbl">Current Streak</div></div>
       <div class="pd-stat pink"><div class="pd-stat-val">${stats.bestStreak}</div><div class="pd-stat-lbl">Best Streak</div></div>
       <div class="pd-stat blue"><div class="pd-stat-val">${days.filter(d=>d.q>0).length}/7</div><div class="pd-stat-lbl">Active Days</div></div>`;
 
-    /* Consistency dots â€” days array already Monâ€“Sun order */
+    /* Consistency dots — days array already Mon–Sun order */
     const dots = days.map(d =>
       `<div class="pd-dot ${d.q>0?'active':'inactive'}">
         <div class="pd-dot-day">${d.label}</div>
-        <div class="pd-dot-count">${d.q>0?d.q:'â€“'}</div>
+        <div class="pd-dot-count">${d.q>0?d.q:'–'}</div>
       </div>`).join('');
     document.getElementById('pdConsistency').innerHTML =
-      `<div class="pd-card-title">ðŸ“… This Week (Monâ€“Sun)</div><div class="pd-dot-row">${dots}</div>`;
+      `<div class="pd-card-title">📅 This Week (Mon–Sun)</div><div class="pd-dot-row">${dots}</div>`;
 
     /* Time tracking */
     const t = loadTime();
     document.getElementById('pdTimeCard').innerHTML =
-      `<div class="pd-card-title">â±ï¸ Time Spent</div>
+      `<div class="pd-card-title">⏱️ Time Spent</div>
        <div class="pd-time-row">
          <div class="pd-time-pill"><div class="pd-time-val">${fmtTime(t.todaySec||0)}</div><div class="pd-time-lbl">Today</div></div>
          <div class="pd-time-pill"><div class="pd-time-val">${fmtTime(t.weekSec||0)}</div><div class="pd-time-lbl">This Week</div></div>
@@ -4656,10 +4332,10 @@ const PerfDash = (() => {
 
   function renderWeekly(days) {
     document.getElementById('pdWeeklyBar').innerHTML =
-      `<div class="pd-card-title">ðŸ“Š MCQs Per Day â€” This Week (Monâ€“Sun)</div>` +
+      `<div class="pd-card-title">📊 MCQs Per Day — This Week (Mon–Sun)</div>` +
       barChart(days, 'accent', 'label', 'q', '');
     document.getElementById('pdAccuracyBar').innerHTML =
-      `<div class="pd-card-title">ðŸŽ¯ Accuracy Per Day (%)</div>` +
+      `<div class="pd-card-title">🎯 Accuracy Per Day (%)</div>` +
       barChart(days, 'green', 'label', 'acc', '%');
   }
 
@@ -4669,7 +4345,7 @@ const PerfDash = (() => {
 
     /* MCQs per week bar chart */
     document.getElementById('pdMonthlyBar').innerHTML =
-      `<div class="pd-card-title">ðŸ“… MCQs Per Week â€” Last 30 Days</div>` +
+      `<div class="pd-card-title">📅 MCQs Per Week — Last 30 Days</div>` +
       barChart(weeks, 'accent', 'label', 'q', '') +
       `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;">` +
       weeks.map(w => `<div style="flex:1;font-size:.58rem;color:var(--muted);text-align:center;min-width:0;">${w.sublabel}</div>`).join('') +
@@ -4677,12 +4353,12 @@ const PerfDash = (() => {
 
     /* Accuracy per week */
     document.getElementById('pdMonthlyAcc').innerHTML =
-      `<div class="pd-card-title">ðŸŽ¯ Accuracy Per Week (%)</div>` +
+      `<div class="pd-card-title">🎯 Accuracy Per Week (%)</div>` +
       barChart(weeks, 'green', 'label', 'acc', '%');
 
     /* Monthly summary stats */
     document.getElementById('pdMonthlyStats').innerHTML =
-      `<div class="pd-card-title">ðŸ“‹ 30-Day Summary</div>
+      `<div class="pd-card-title">📋 30-Day Summary</div>
        <div class="pd-stats-row" style="grid-template-columns:repeat(2,1fr);">
          <div class="pd-stat"><div class="pd-stat-val">${ms.totalQ.toLocaleString()}</div><div class="pd-stat-lbl">MCQs Done</div></div>
          <div class="pd-stat green"><div class="pd-stat-val">${ms.acc}%</div><div class="pd-stat-lbl">Avg Accuracy</div></div>
@@ -4695,16 +4371,16 @@ const PerfDash = (() => {
     const chs = chapterStats(log);
     if (!chs.length) {
       document.getElementById('pdChapterList').innerHTML =
-        `<div class="pd-card-title">ðŸ“š Chapter Performance</div><div class="pd-empty"><span class="big">ðŸ“–</span>No chapter data yet. Attempt some MCQs!</div>`;
+        `<div class="pd-card-title">📚 Chapter Performance</div><div class="pd-empty"><span class="big">📖</span>No chapter data yet. Attempt some MCQs!</div>`;
       return;
     }
     const weak = chs.filter(c => c.acc < 60 && c.q >= 5);
     const strong = chs.filter(c => c.acc >= 80 && c.q >= 5);
-    let html = `<div class="pd-card-title">ðŸ“š Chapter Performance</div>`;
+    let html = `<div class="pd-card-title">📚 Chapter Performance</div>`;
     if (weak.length)
-      html += `<div class="pd-insight warn" style="margin-bottom:10px"><span class="pd-insight-icon">âš ï¸</span><div><strong>Focus more on:</strong> ${weak.slice(0,3).map(c=>c.name).join(', ')}</div></div>`;
+      html += `<div class="pd-insight warn" style="margin-bottom:10px"><span class="pd-insight-icon">⚠️</span><div><strong>Focus more on:</strong> ${weak.slice(0,3).map(c=>c.name).join(', ')}</div></div>`;
     if (strong.length)
-      html += `<div class="pd-insight good" style="margin-bottom:10px"><span class="pd-insight-icon">â­</span><div><strong>Strong areas:</strong> ${strong.slice(0,3).map(c=>c.name).join(', ')}</div></div>`;
+      html += `<div class="pd-insight good" style="margin-bottom:10px"><span class="pd-insight-icon">⭐</span><div><strong>Strong areas:</strong> ${strong.slice(0,3).map(c=>c.name).join(', ')}</div></div>`;
     chs.forEach(c => {
       const color = c.acc >= 80 ? '#10b981' : c.acc >= 50 ? '#f59e0b' : '#ef4444';
       html += `<div class="pd-ch-item">
@@ -4725,10 +4401,10 @@ const PerfDash = (() => {
         <div>${m.text}</div>
       </div>`).join('');
     document.getElementById('pdInsightsList').innerHTML = html ||
-      `<div class="pd-empty"><span class="big">ðŸ’¡</span>Attempt some quizzes to generate insights!</div>`;
+      `<div class="pd-empty"><span class="big">💡</span>Attempt some quizzes to generate insights!</div>`;
   }
 
-  /* â”€â”€ Tab switching â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Tab switching ───────────────────────────────────────── */
   let _cachedData = null;
 
   function tab(btn, id) {
@@ -4747,13 +4423,13 @@ const PerfDash = (() => {
     else if (id === 'insights')  renderInsights(data.log, data.days, data.stats);
   }
 
-  /* â”€â”€ Open / Close â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Open / Close ────────────────────────────────────────── */
   function open() {
     const overlay = document.getElementById('pdOverlay');
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    /* Performance Optimization â€” compute only on open */
+    /* Performance Optimization — compute only on open */
     requestAnimationFrame(() => {
       const log   = loadLog();
       const days  = last7Days(log);
@@ -4788,4 +4464,3 @@ const PerfDash = (() => {
 
 </body>
 </html>
-
